@@ -1,4 +1,94 @@
 @charset "UTF-8";
 /*CSS Doc*/
 
+.hidden {
+	display: none;
+}
 
+body {
+	background-color: gold;
+}
+
+h1 {
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 20px;
+}
+
+#container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	text-align: center;
+	width: 100%;
+	height: 700px;
+	background-color: gold;
+}
+
+#headerCon {
+	margin: auto auto;
+}
+
+#headerCon p {
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	margin: 40px auto;
+	width: 60%;
+}
+
+#gameArea {
+	display: flex;
+	flex-direction: column
+}
+
+#gameCon {
+	display: flex;
+	flex-direction: row;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+#beats ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px;
+	height: 80%;
+	background-color: tomato;
+}
+
+#enviroSoundsCon {
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+}
+
+#enviro {
+	width: 1070px;
+	height: 550px;
+	background-color: tomato;
+}
+
+#sounds ul{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	margin-top: 40px;
+	padding: 20px;
+	background-color: tomato;
+}
+
+#sounds ul li{
+	display: inline-block;
+}
