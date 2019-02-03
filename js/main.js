@@ -20,13 +20,17 @@ console.log("Javascript is linked up");
 // create variable to store audio files
  	let allAudio = document.querySelectorAll(".audio");
 
-//make icons draggable
+//override default to enable drop
 
 
-//create function to drag and drop
+//create drag function
+
+//create drop function
+
+//create audio play function 
 
 
-//create event to trigger audio to play once placed in the music box
+//create event to trigger audio to play once droppped in the 'play music' box
 
 // Reset button reloads page
 
