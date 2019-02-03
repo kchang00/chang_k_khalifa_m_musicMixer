@@ -1,6 +1,6 @@
 #Animal Tracks Music Mixer!
 
-Drag and drop different sound effects to make your own music! Select a beat and get the animal band together!
+Drag and drop different animal sounds to make your own music! Select a beat and get the animal band together!
 
 ~ Activity Log ~
 
