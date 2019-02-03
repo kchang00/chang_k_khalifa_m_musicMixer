@@ -12,6 +12,14 @@ Created folder structure. First commit.
 
 Uploaded sketches and written logic.
 
-02/01 - 4:40pm -> des.kc.scaffold - Kayla
+02/01 -> des.kc.scaffold - Kayla
 
 Basic HTML and CSS scaffold.
+
+01/31 -> Mariam
+
+inspiration documents and links
+
+02/01 -> Mariam
+
+developer notes
