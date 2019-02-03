@@ -23,3 +23,8 @@ inspiration documents and links
 02/01 -> Mariam
 
 developer notes
+
+02/03 -> Mariam 
+
+more developer notes
+audio folder with some audio samples
