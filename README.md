@@ -1,30 +1,30 @@
-#Animal Tracks Music Mixer!
+
+<p align="center"><img src="images/logo.svg" width="20%">
+
+# Animal Tracks Music Mixer!
 
 Drag and drop different animal sounds to make your own music! Select a beat and get the animal band together!
+<hr>
 
-~ Activity Log ~
+</p>
 
-01/14 -> firstCommit - Kayla
+## Team Members:
 
-Created folder structure. First commit.
+* Kayla Chang @kchang00
+* Mariam Khalifa @mariamkhalifa
 
-02/01 -> des.kc.sketches - Kayla
+## Built With: 
 
-Uploaded sketches and written logic.
+```
+- Basic CSS and HTML (Flexbox layout)
+- Some CSS3 Animation (more to be added!)
+- JavaScript drag and drop, as well as play audio functions
 
-02/01 -> des.kc.scaffold - Kayla
+```
+## Design Elements :sparkles:
 
-Basic HTML and CSS scaffold.
+- [ ] Make icons
+- [ ] Make characters
+- [ ] Layout
+- [ ] Make audio
 
-01/31 -> Mariam
-
-inspiration documents and links
-
-02/01 -> Mariam
-
-developer notes
-
-02/03 -> Mariam 
-
-more developer notes
-audio folder with some audio samples
