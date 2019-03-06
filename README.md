@@ -1,5 +1,5 @@
 
-<p align="center"><img src="images/group.svg" width="20%">
+<p align="center"><img src="images/group.svg" width="100%">
 
 # Animal Tracks Music Mixer!
 
