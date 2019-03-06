@@ -1,5 +1,5 @@
 
-<p align="center"><img src="images/logo.svg" width="20%">
+<p align="center"><img src="images/group.svg" width="20%">
 
 # Animal Tracks Music Mixer!
 
@@ -23,8 +23,5 @@ Drag and drop different animal sounds to make your own music! Select a beat and 
 ```
 ## Design Elements :sparkles:
 
-- [ ] Make icons
-- [ ] Make characters
-- [ ] Layout
-- [ ] Make audio
+- [ ] Tweak Custom Characters and Icons
 
