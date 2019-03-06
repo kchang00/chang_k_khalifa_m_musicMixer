@@ -2,7 +2,8 @@
 
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
-//console.log(dropZones);
+	audio = document.querySelectorAll('.audio');
+console.log(audio);
 
 initDrag();
 
