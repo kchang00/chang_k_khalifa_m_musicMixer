@@ -78,9 +78,19 @@ header {
 	width: 1070px;
 	height: 550px;
 	background-color: tomato;
+	display: flex;
 }
 
-#sounds ul{
+.dropZone {
+	background-color: pink;
+	border: grey 1px dashed;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	margin-bottom: 0;
+}
+
+#sounds {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
@@ -89,6 +99,8 @@ header {
 	background-color: tomato;
 }
 
-#sounds ul li{
+#sounds img {
 	display: inline-block;
+	width: 100px;
+	height: 100px;
 }
