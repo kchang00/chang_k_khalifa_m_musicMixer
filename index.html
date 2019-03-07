@@ -43,15 +43,18 @@
 
 					<nav id="sounds">
 					<h3 class="hidden">Sounds Navigation</h3>
-						<img draggable class="image" id="img1" src="images/tiger_v1.svg" alt="tiger">
-						<img draggable class="image" id="img2" src="images/dog_v1.svg" alt="dog">
-						<img draggable class="image" id="img3"src="images/horse_v1.svg" alt="horse">
-						<img draggable class="image" id="img4" src="images/bird_v1.svg" alt="bird">
+						<img draggable data-currenttrack="tiger.mp3" class="image" id="img1" src="images/tiger_v1.svg" alt="tiger">
+						<img draggable data-currenttrack="dog.mp3"class="image" id="img2" src="images/dog_v1.svg" alt="dog">
+						<img draggable data-currenttrack="horse.mp3" class="image" id="img3"src="images/horse_v1.svg" alt="horse">
+						<img draggable data-currenttrack="bird.mp3" class="image" id="img4" src="images/bird_v1.svg" alt="bird">
 					</nav>
 				</div>
 			</div>
 		</section>
-		<audio class="audio"></audio>
+
+		<audio class="audio" src="audio/tiger.mp3" loop></audio>
+		
+
 	</div>
 
 	<script src="js/main.js"></script>
