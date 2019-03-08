@@ -3,7 +3,7 @@
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
 	audio = document.querySelectorAll('.audio');
-console.log(audio);
+//console.log(audio);
 
 initDrag();
 
@@ -33,14 +33,22 @@ function initDrag() {
 						//debugger;
 						e.target.appendChild(document.querySelector(`#${img}`));
 						
+						audio.play();
 					}
 					else {return;}
 				});
 			
 	});
 
+	function swapSource(){
+		debugger;
+		let currentTrack = this.dataset.currenttrack;
+		audio.src = 'audio/${currentTrack}';
+	}
 
-
+images.forEach(image=> {
+	image.addEventListener('drop', swapSource);
+})
 
 })();
  
