@@ -3,7 +3,8 @@
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
 	audio = document.querySelector('.audio');
-//console.log(audio);
+	enviroOverlay = document.querySelector('.enviroOverlay');
+// console.log(audio);
 
 initDrag();
 
@@ -12,6 +13,10 @@ function initDrag() {
 				image.addEventListener('dragstart', function(e) {
 					console.log('draggin...');
 					e.dataTransfer.setData('text/plain', this.id);
+					enviroOverlay.classList.add("overlay");
+				});
+				image.addEventListener('dragend', function(e) {
+					enviroOverlay.classList.remove("overlay");
 				});
 			});
 		}
@@ -43,8 +48,5 @@ function initDrag() {
 				});
 			
 	});
-
-	
-
 
 })();
