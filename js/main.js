@@ -2,7 +2,7 @@
 
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
-	audio = document.querySelectorAll('.audio');
+	audio = document.querySelector('.audio');
 //console.log(audio);
 
 initDrag();
@@ -23,7 +23,8 @@ function initDrag() {
 				console.log("you dragged over me!");
 			});
 
-			
+				
+
 				zone.addEventListener("drop", function(e) {
 					if (zone.firstChild == null) {
 						e.preventDefault();
@@ -33,6 +34,7 @@ function initDrag() {
 						//debugger;
 						e.target.appendChild(document.querySelector(`#${img}`));
 						
+						swapSource();
 						audio.play();
 					}
 					else {return;}
@@ -41,14 +43,15 @@ function initDrag() {
 	});
 
 	function swapSource(){
-		debugger;
-		let currentTrack = this.dataset.currenttrack;
-		audio.src = 'audio/${currentTrack}';
+		//debugger;
+		images.forEach(image => {
+			let currentTrack = image.dataset.currenttrack;
+		})
+		
+		
+		audio.src = `audio/${currentTrack}`;
 	}
 
-images.forEach(image=> {
-	image.addEventListener('drop', swapSource);
-})
 
 })();
  
