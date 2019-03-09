@@ -11,15 +11,35 @@ body {
 
 h1 {
 	font-family: 'ZCOOL KuaiLe', cursive;
-	font-size: 50px;
+	font-size: 4em;
 	font-weight: bold;
+	text-shadow:
+	/*trbl*/
+	-2px -2px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    4px 4px 0 #fff;
+	color: #9263E5;
 }
 
 h2 {
 	font-family: 'Roboto', sans-serif;
-	font-size: 25px;
+	font-size: 2em;
 	font-weight: bold;
 	margin: 20px;
+    text-shadow:
+	/*trbl*/
+	-1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    2px 2px 0 #fff;
+	color: #9263E5;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.5em;
+	color: #000;
 }
 
 img {
@@ -58,6 +78,10 @@ header {
 }
 
 #headerCon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	margin: auto auto;
 }
 
@@ -104,28 +128,62 @@ header {
 	margin-left: auto;
 }
 
+#enviroCon {
+	position: relative;
+}
+
 #enviro {
-	width: 1070px;
+	width: 1030px;
 	height: 550px;
 	background-color: #9263E5;
 	display: flex;
 	border: 1px #fff solid;
 	border-radius: 30px;
 	transition: all .5s ease-in-out;
+	overflow: hidden;
+	padding: 0px 20px;
 }
 
 /* this will turn into the drag overlay (will have blur + text) */
-#enviro:hover {
-	background-color: #7149AD; 
+
+.enviroOverlay {
+	display: none;
 }
 
-.dropZone {
+.overlay {
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	border-radius: 30px;
+	background-color: #7149AD;
+}
+
+.overlayText {
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.dropZone { 
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	margin: 0px 10px;
 /*	border: #fff 1px dashed;*/
-	height: 100%;
-	width: 100%;
+	flex: 1 1 0;
+	/* IMPORTANT! Makes sure zones are above overlay so drag and drop function works*/
+	z-index: 1;
+}
+
+.dropZone img {
+	width: auto;
+	max-height: 100%;
 }
 
 #sounds {
@@ -139,7 +197,7 @@ header {
 }
 
 #sounds img {
-	display: inline-block;
-	width: 100px;
-	height: 100px;
+/*	max-width: 100%;
+	height: auto;*/
+	flex: 1;
 }
