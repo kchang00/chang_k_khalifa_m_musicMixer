@@ -29,7 +29,7 @@ h2 {
 	margin: 20px;
     text-shadow:
 	/*trbl*/
-	-1px -1px 0 #fff,
+	-2px -2px 0 #fff,
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
     2px 2px 0 #fff;
@@ -39,50 +39,60 @@ h2 {
 p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5em;
-	color: #000;
+	color: #311259;
 }
 
-img {
+img, a {
 	cursor: pointer;
 }
 
 /* === ARROWS === */
 
-i {
+.arrowDown {
+	position: absolute;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 80vh;
+	transition: all .3s ease;
 	border: solid #fff;
 	border-width: 0 15px 15px 0;
 	border-radius: 4px;
 	display: inline-block;
 	padding: 15px;
+	animation: float .5s ease-in-out infinite alternate;
 }
 
-.arrowDown {
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
-	margin-top: 100px;
-}
-
+@-webkit-keyframes float {
+        0% { 
+        	top: 80vh;
+        }
+        100% {
+        	top: 81vh;
+        }
+    }
 
 #container {
-	width: 1200px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
 header {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
-	width: 100%;
-	height: 700px;
+	justify-content: center;
+	width: auto;
+	height: 100vh;
 	background-color: #9263E5;
 }
 
 #headerCon {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
+	width: auto;
 	justify-content: center;
 	align-items: center;
-	margin: auto auto;
+	text-align: center;
 }
 
 #headerCon p {
@@ -111,15 +121,34 @@ header {
 	justify-content: space-around;
 	padding: 20px;
 	height: 80%;
-	background-color: #6DD0AD;
+	background-color: #00E0BB;
 	border-radius: 30px;
 }
 .songBtn {
+	cursor: pointer;
 	padding: 25px;
-	background-color: #9263E5;
+	background-color: #28BFBB;
 	border-radius: 50px;
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-weight: bold;
+	box-shadow: 
+	0.5px 0.5px 0 #0E666C,
+    0px 0px 0 #0E666C,
+    0px 1px 0 #0E666C,
+    2px 5px 0 #0E666C;
+    color: #0E666C;
+}
+
+.songBtn:active {
+	box-shadow: 
+	0px 0px 0 #fff,
+    0px 0px 0 #fff,
+    0px 0px 0 #fff,
+    0px 0px 0 #fff;
+    -webkit-transform: translate(2px, 5px);
+	-ms-transform: translate(2px, 5px);
+	transform: translate(2px, 5px);
+
 }
 
 #enviroSoundsCon {
@@ -130,13 +159,15 @@ header {
 
 #enviroCon {
 	position: relative;
+	display: flex;
+	width: 150vh;
+	height: 80vh;
 }
 
 #enviro {
-	width: 1030px;
-	height: 550px;
 	background-color: #9263E5;
 	display: flex;
+	flex: 1;
 	border: 1px #fff solid;
 	border-radius: 30px;
 	transition: all .5s ease-in-out;
@@ -158,6 +189,7 @@ header {
 	top: 0;
 	border-radius: 30px;
 	background-color: #7149AD;
+	border: 1px #fff solid;
 }
 
 .overlayText {
@@ -192,7 +224,7 @@ header {
 	flex-direction: row;
 	margin-top: 40px;
 	padding: 20px;
-	background-color: #6DD0AD;
+	background-color: #00E0BB;
 	border-radius: 30px;
 }
 
