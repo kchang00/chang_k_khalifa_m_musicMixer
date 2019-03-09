@@ -34,7 +34,9 @@ function initDrag() {
 						//debugger;
 						e.target.appendChild(document.querySelector(`#${img}`));
 						
-						swapSource();
+						let track = document.querySelector(`#${img}`);
+						let currentTrack = track.dataset.currenttrack;
+						audio.src = `audio/${currentTrack}`;
 						audio.play();
 					}
 					else {return;}
@@ -42,18 +44,7 @@ function initDrag() {
 			
 	});
 
-	function swapSource(){
-		//debugger;
-		images.forEach(image => {
-			let currentTrack = image.dataset.currenttrack;
-		})
-		
-		
-		audio.src = `audio/${currentTrack}`;
-	}
+	
 
 
 })();
- 
-
-
