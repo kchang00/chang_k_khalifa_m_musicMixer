@@ -2,9 +2,8 @@
 
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
-	audio = document.querySelector('.audio');
-//console.log(audio);
-
+	audio = document.querySelector('#tiger-sound');
+	
 initDrag();
 
 function initDrag() {
@@ -34,10 +33,13 @@ function initDrag() {
 						//debugger;
 						e.target.appendChild(document.querySelector(`#${img}`));
 						
+
+						//swapSource
 						let track = document.querySelector(`#${img}`);
 						let currentTrack = track.dataset.currenttrack;
 						audio.src = `audio/${currentTrack}`;
 						audio.play();
+
 					}
 					else {return;}
 				});
