@@ -160,6 +160,7 @@ header {
 #enviroCon {
 	position: relative;
 	display: flex;
+	flex-direction: column;
 	width: 150vh;
 	height: 80vh;
 }
@@ -203,15 +204,20 @@ header {
 }
 
 #controls {
+	position: absolute;
 	display: flex;
-	margin: 0 auto;
+/*	flex-direction: column;*/
+	align-self: center;
+	/* IMPORTANT! Positions Buttons over dropZones so you can interact with them*/
+	z-index: 2;
+	background-color: #00E0BB;
+	padding: 10px 20px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
-.button {
-	width: 70px;
-	height: 70px;
+#controls .songBtn {
 	margin: 10px;
-	cursor: pointer;
 }
 
 #playButton {
@@ -226,9 +232,9 @@ header {
 	background: url(../images/rewind.svg) no-repeat;
 }
 
-#muteButton {
+/*#muteButton {
 	background: url(../images/mute.svg) no-repeat;
-}
+}*/
 
 .dropZone { 
 	display: flex;

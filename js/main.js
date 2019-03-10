@@ -74,22 +74,26 @@ function pause() {
 }
 
 function rewind() {
-	audio.currentTime = 0;
+	dropZones.forEach(zone => {
+		window.location.reload();
+	});
 }
 
-function mute() {
-	if (audio.muted == true) {
-		audio.muted = false;
-		muteButton.style.background = "url(images/mute.svg)";
+// function mute() {
+// 	if (audio.muted == true) {
+// 		audio.muted = false;
+// 		muteButton.style.background = "url(images/mute.svg)";
 
-	}
+// 	}
 
-	else {
-		audio.muted = true;
-		muteButton.style.background = "url(images/unmute.svg)";
-	}
+// 	else {
+// 		audio.muted = true;
+// 		muteButton.style.background = "url(images/unmute.svg)";
+// 	}
 	
-}
+// }
+
+// clicking one character svg removes all character svgs. Fix to remove selected one.
 
 function removeIcon() {
 	dropZones.forEach(zone => {
@@ -103,7 +107,7 @@ function removeIcon() {
 //events
 pauseButton.addEventListener('click', pause);
 rewindButton.addEventListener('click', rewind);
-muteButton.addEventListener('click', mute);
+// muteButton.addEventListener('click', mute);
 dropZones.forEach(zone=> {
 	zone.addEventListener('click', removeIcon);
 });
