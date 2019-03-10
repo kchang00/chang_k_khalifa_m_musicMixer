@@ -202,6 +202,34 @@ header {
 	transform: translate(-50%, -50%);
 }
 
+#controls {
+	display: flex;
+	margin: 0 auto;
+}
+
+.button {
+	width: 70px;
+	height: 70px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+#playButton {
+	background: url(../images/play.svg) no-repeat;
+}
+
+#pauseButton {
+	background: url(../images/pause.svg) no-repeat;
+}
+
+#rewindButton {
+	background: url(../images/rewind.svg) no-repeat;
+}
+
+#muteButton {
+	background: url(../images/mute.svg) no-repeat;
+}
+
 .dropZone { 
 	display: flex;
 	flex-direction: column;
