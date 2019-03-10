@@ -6,7 +6,10 @@ let images = document.querySelectorAll('.image');
 	pauseButton = document.querySelector('#pauseButton');
 	rewindButton = document.querySelector('#rewindButton');
 	muteButton = document.querySelector('#muteButton');
-	
+	enviroOverlay = document.querySelector('.enviroOverlay');
+// console.log(audio);
+
+
 initDrag();
 
 function initDrag() {
@@ -15,6 +18,10 @@ function initDrag() {
 					console.log('draggin...');
 					e.dataTransfer.effectAllowed = "copy";
 					e.dataTransfer.setData('text/plain', this.id);
+					enviroOverlay.classList.add("overlay");
+				});
+				image.addEventListener('dragend', function(e) {
+					enviroOverlay.classList.remove("overlay");
 				});
 			});
 		}
