@@ -61,14 +61,16 @@ function initDrag() {
 
 //functions
 function pause() {
+	// accounts for different icon size
+	pauseButton.style.width = '20.58px';
 	if (audio.paused) {
 		audio.play();
-		pauseButton.style.background = 'url(images/pause.svg)';
+		pauseButton.innerHTML = '&#xf04c;';
 	}
 
 	else {
 		audio.pause();
-		pauseButton.style.background = 'url(images/play.svg)';
+		pauseButton.innerHTML = '&#xf04b;';
 	}
 	
 }
