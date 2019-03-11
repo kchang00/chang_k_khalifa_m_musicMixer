@@ -5,7 +5,6 @@ let images = document.querySelectorAll('.image');
 	audio = document.querySelector('.audio');
 	pauseButton = document.querySelector('#pauseButton');
 	rewindButton = document.querySelector('#rewindButton');
-	//muteButton = document.querySelector('#muteButton');
 	enviroOverlay = document.querySelector('.enviroOverlay');
 	song = document.querySelector('.songs');
 	songButtons = document.querySelectorAll('.songBtn');
@@ -83,22 +82,6 @@ function rewind() {
 	});
 }
 
-// function mute() {
-// 	if (audio.muted == true) {
-// 		audio.muted = false;
-// 		muteButton.style.background = "url(images/mute.svg)";
-
-// 	}
-
-// 	else {
-// 		audio.muted = true;
-// 		muteButton.style.background = "url(images/unmute.svg)";
-// 	}
-	
-// }
-
-// clicking one character svg removes all character svgs. Fix to remove selected one.
-
 function removeIcon() {
 	dropZones.forEach(zone => {
 		zone.innerHTML = null;
@@ -119,7 +102,6 @@ function swapSong() {
 //events
 pauseButton.addEventListener('click', pause);
 rewindButton.addEventListener('click', rewind);
-//muteButton.addEventListener('click', mute);
 dropZones.forEach(zone=> {
 	zone.addEventListener('click', removeIcon);
 });
