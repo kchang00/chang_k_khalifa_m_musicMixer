@@ -5,9 +5,11 @@ let images = document.querySelectorAll('.image');
 	audio = document.querySelector('.audio');
 	pauseButton = document.querySelector('#pauseButton');
 	rewindButton = document.querySelector('#rewindButton');
-	muteButton = document.querySelector('#muteButton');
+	//muteButton = document.querySelector('#muteButton');
 	enviroOverlay = document.querySelector('.enviroOverlay');
-// console.log(audio);
+	song = document.querySelector('.songs');
+	songButtons = document.querySelectorAll('.songBtn');
+//console.log(songButtons);
 
 
 initDrag();
@@ -61,35 +63,41 @@ function initDrag() {
 
 //functions
 function pause() {
+	// accounts for different icon size
+	pauseButton.style.width = '20.58px';
 	if (audio.paused) {
 		audio.play();
-		pauseButton.style.background = 'url(images/pause.svg)';
+		pauseButton.innerHTML = '&#xf04c;';
 	}
 
 	else {
 		audio.pause();
-		pauseButton.style.background = 'url(images/play.svg)';
+		pauseButton.innerHTML = '&#xf04b;';
 	}
 	
 }
 
 function rewind() {
-	audio.currentTime = 0;
+	dropZones.forEach(zone => {
+		window.location.reload();
+	});
 }
 
-function mute() {
-	if (audio.muted == true) {
-		audio.muted = false;
-		muteButton.style.background = "url(images/mute.svg)";
+// function mute() {
+// 	if (audio.muted == true) {
+// 		audio.muted = false;
+// 		muteButton.style.background = "url(images/mute.svg)";
 
-	}
+// 	}
 
-	else {
-		audio.muted = true;
-		muteButton.style.background = "url(images/unmute.svg)";
-	}
+// 	else {
+// 		audio.muted = true;
+// 		muteButton.style.background = "url(images/unmute.svg)";
+// 	}
 	
-}
+// }
+
+// clicking one character svg removes all character svgs. Fix to remove selected one.
 
 function removeIcon() {
 	dropZones.forEach(zone => {
@@ -98,15 +106,26 @@ function removeIcon() {
 	});
 }
 
+function swapSong() {
+	//debugger;
+	let currentSong = this.dataset.currentsong;
+	song.src = `audio/${currentSong}`;
+	song.load();
+	song.play();
+}
+
 
 
 //events
 pauseButton.addEventListener('click', pause);
 rewindButton.addEventListener('click', rewind);
-muteButton.addEventListener('click', mute);
+//muteButton.addEventListener('click', mute);
 dropZones.forEach(zone=> {
 	zone.addEventListener('click', removeIcon);
 });
+songButtons.forEach(button => {
+	button.addEventListener('click', swapSong);
+})
 
 
 })();

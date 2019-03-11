@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700%7CZCOOL+KuaiLe" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 <h1 class="hidden">Animal Tracks Game</h1>
 	<div id="container">
@@ -28,27 +29,25 @@
 				<nav id="beats">
 				<h3 class="hidden">Beats Navigation</h3>
 					<ul>
-						<li><div class="songBtn">1</div></li>
-						<li><div class="songBtn">2</div></li>
-						<li><div class="songBtn">3</div></li>
-						<li><div class="songBtn">4</div></li>
+						<li><div data-currentsong="song1.mp3" class="songBtn">1</div></li>
+						<li><div data-currentsong="song2.mp3" class="songBtn">2</div></li>
+						<li><div data-currentsong="song3.mp3" class="songBtn">3</div></li>
+						<li><div data-currentsong="song4.mp3" class="songBtn">4</div></li>
 					</ul>
 				</nav>
 
 				<div id="enviroSoundsCon">
-					<div id="controls">
-						<div class="button" id="pauseButton"></div>
-						<div class="button" id="rewindButton"></div>
-						<div class="button" id="muteButton"></div>
-					</div>
-				
 					<div id="enviroCon">
-						<div id="enviro">
-							<div class="dropZone"></div>
-							<div class="dropZone"></div>
-							<div class="dropZone"></div>
-							<div class="dropZone"></div>
-						</div>
+					<div id="controls">
+						<div class="controlsBtn fa" id="pauseButton">&#xf04c;</div>
+						<div class="controlsBtn fa" id="rewindButton">&#xf021;</div>
+					</div>
+					<div id="enviro">
+						<div class="dropZone"></div>
+						<div class="dropZone"></div>
+						<div class="dropZone"></div>
+						<div class="dropZone"></div>
+					</div>
 						<div class="enviroOverlay">
 							<p class="overlayText">Drag and Drop Here!</p>
 						</div>
@@ -66,7 +65,7 @@
 		</section>
 
 		<audio class="audio" src="audio/tiger.mp3" loop></audio>
-		
+		<audio class="songs" src="audio/song1.mp3" loop></audio>
 
 	</div>
 
