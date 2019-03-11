@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700%7CZCOOL+KuaiLe" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 <h1 class="hidden">Animal Tracks Game</h1>
 	<div id="container">
@@ -29,15 +30,14 @@
 				<nav id="beats">
 				<h3 class="hidden">Beats Navigation</h3>
 					<ul>
-						<li><div class="songBtn">1</div></li>
-						<li><div class="songBtn">2</div></li>
-						<li><div class="songBtn">3</div></li>
-						<li><div class="songBtn">4</div></li>
+						<li><div data-currentsong="song1.mp3" class="songBtn">1</div></li>
+						<li><div data-currentsong="song2.mp3" class="songBtn">2</div></li>
+						<li><div data-currentsong="song3.mp3" class="songBtn">3</div></li>
+						<li><div data-currentsong="song4.mp3" class="songBtn">4</div></li>
 					</ul>
 				</nav>
 
 				<div id="enviroSoundsCon">
-				
 					<div id="enviroCon">
 
 					<div id="controls">
@@ -67,7 +67,7 @@
 		</section>
 
 		<audio class="audio" src="audio/tiger.mp3" loop></audio>
-		
+		<audio class="songs" src="audio/song1.mp3" loop></audio>
 
 	</div>
 
