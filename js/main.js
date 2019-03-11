@@ -53,6 +53,7 @@ function initDrag() {
 						let currentTrack = track.dataset.currenttrack;
 						audio.src = `audio/${currentTrack}`;
 						audio.play();
+						song.currentTime = 0;
 
 					}
 					else {return;}
@@ -71,6 +72,29 @@ function pause() {
 
 	else {
 		audio.pause();
+		pauseButton.innerHTML = '&#xf04b;';
+	}
+	
+}
+
+function pauseSong() {
+	// accounts for different icon size
+	pauseButton.style.width = '20.58px';
+	if (song.paused) {
+		song.play();
+		pauseButton.innerHTML = '&#xf04c;';
+	}
+
+	// else if (dropZones.forEach(zone => {
+	// 	zone.firstChild == null;
+	// 	console.log('hi')
+	// })) {
+	// 	song.pause();
+	// 	audio.pause();
+	// }
+
+	else {
+		song.pause();
 		pauseButton.innerHTML = '&#xf04b;';
 	}
 	
@@ -100,7 +124,7 @@ function swapSong() {
 
 
 //events
-pauseButton.addEventListener('click', pause);
+pauseButton.addEventListener('click', pausePlay);
 rewindButton.addEventListener('click', rewind);
 dropZones.forEach(zone=> {
 	zone.addEventListener('click', removeIcon);
@@ -108,6 +132,8 @@ dropZones.forEach(zone=> {
 songButtons.forEach(button => {
 	button.addEventListener('click', swapSong);
 })
+pauseButton.addEventListener('click', pauseSong);
+
 
 
 })();
