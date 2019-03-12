@@ -2,14 +2,45 @@
 /*CSS Doc*/
 
 .hidden {
-	display: none;
+	display: none !important;
+}
+
+.show {
+	display: block;
 }
 
 body {
 	background-color: #9263E5;
 }
 
-h1 {
+/*h1 {
+	font-family: 'ZCOOL KuaiLe', cursive;
+	font-size: 4em;
+	font-weight: bold;
+	text-shadow:*/
+	/*trbl*/
+/*	-2px -2px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    4px 4px 0 #fff;
+	color: #9263E5;
+}*/
+
+/*h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px;
+    text-shadow:*/
+	/*trbl*/
+/*	-2px -2px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    2px 2px 0 #fff;
+	color: #9263E5;
+}*/
+
+h3 {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 4em;
 	font-weight: bold;
@@ -19,20 +50,6 @@ h1 {
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
     4px 4px 0 #fff;
-	color: #9263E5;
-}
-
-h2 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 2em;
-	font-weight: bold;
-	margin: 20px;
-    text-shadow:
-	/*trbl*/
-	-2px -2px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    2px 2px 0 #fff;
 	color: #9263E5;
 }
 
@@ -106,13 +123,12 @@ header {
 #gameArea {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 }
 
 #gameCon {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
@@ -125,7 +141,28 @@ header {
 	height: 80%;
 	background-color: #00E0BB;
 	border-radius: 30px;
+	animation: left-in 1s 1;
 }
+
+@-webkit-keyframes left-in {
+	0% {
+		opacity: 0;
+		transform: translateX(-120%);
+	}
+	1% {
+		opacity: 1;
+	}
+	80% {
+		transform: translateX(6%);
+	}
+	90%{
+		transform: translateX(4%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
 .songBtn {
 	cursor: pointer;
 	padding: 25px;
@@ -164,21 +201,59 @@ header {
 	display: flex;
 	flex-direction: column;
 	width: 150vh;
-	height: 77vh;
+	height: 70vh;
 }
 
 #enviro {
 	background-color: #9263E5;
 	display: flex;
 	flex: 1;
-	border: 1px #fff solid;
+	border: 2.5vh #00E0BB solid;
 	border-radius: 30px;
 	transition: all .5s ease-in-out;
 	overflow: hidden;
 	padding: 0px 20px;
 }
 
-/* this will turn into the drag overlay (will have blur + text) */
+/* === OVERLAYS === */
+
+.instructionsOverlay {
+	display: block;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.40);
+	z-index: 3;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.3em;
+	font-weight: bold;
+    text-shadow:
+	/*trbl*/
+	-2px -2px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    2px 2px 0 #fff;
+	color: #9263E5;
+}
+
+.iTopCon {
+	display: flex;
+	margin: 10% 5%;
+	justify-content: space-between;
+}
+
+.iBottomCon {
+	display: flex;
+	margin: 15% 5%;
+	justify-content: space-around;
+}
+
+.oneFade {
+	animation: fade-in 5s ease 1;
+}
 
 .enviroOverlay {
 	display: none;
@@ -187,12 +262,12 @@ header {
 .overlay {
 	display: block;
 	position: absolute;
-	height: 100%;
-	width: 100%;
+	height: 93%;
+	width: 96.6%;
 	top: 0;
 	border-radius: 30px;
 	background-color: #7149AD;
-	border: 1px #fff solid;
+	border: 2.5vh #00E0BB solid;
 }
 
 .overlayText {
@@ -204,6 +279,101 @@ header {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
+
+.titleOverlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 93%;
+	width: 96.6%;
+	top: 0;
+	border-radius: 30px;
+	background-color: #7149AD;
+	border: 2.5vh #00E0BB solid;
+}
+
+.titleOverlayText {
+	position: absolute;
+}
+
+.pulsing {
+	animation-name: zoom-in, beat;
+	animation-duration: 2.5s, .5s;
+	animation-delay: 0s, 3s;
+	animation-iteration-count: 1, infinite;
+}
+
+.oneZoom {
+	/*animation: [animation-name] [animation-duration] [animation-timing-function]
+	[animation-delay] [animation-iteration-count] [animation-direction]*/
+	animation: zoom-out 2.5s forwards;
+}
+
+.fadeOut {
+	animation: fade-out 1s forwards;
+}
+
+@-webkit-keyframes beat{
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.02);
+  }
+  65% {
+    transform: scale(1);
+}
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes zoom-in {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	50% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	85% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+
+}
+
+@-webkit-keyframes zoom-out {
+
+	0% {
+		transform: scale(1);
+	}
+	15% {
+		transform: scale(1.2);
+	}
+	50% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+@-webkit-keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+/* === CONTROLS === */
 
 #controls {
 	position: absolute;
@@ -246,6 +416,36 @@ header {
 
 }
 
+.instructions {
+	position: absolute;
+	align-self: flex-end;
+/*	background-color: gold;*/
+	padding: 3% 4%;
+	color: #28BFBB;
+	font-size: 3em;
+	color: #fff;
+	z-index: 3;
+	/*animation: [animation-name] [animation-duration] [animation-timing-function]
+[animation-delay] [animation-iteration-count] [animation-direction]*/
+	animation: fade-in 5s ease 1;
+}
+
+.instructions:hover {
+	cursor: pointer;
+}
+
+@-webkit-keyframes fade-in{
+	0% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .dropZone { 
 	display: flex;
 	flex-direction: column;
@@ -270,9 +470,32 @@ header {
 	padding: 20px;
 	background-color: #00E0BB;
 	border-radius: 30px;
+	animation: up-in 1.1s 1 forwards;
 }
 
 #sounds img {
 	width: auto;
 	height: 50px;
 /*	flex: 1;*/
+}
+
+@-webkit-keyframes up-in {
+	0% {
+		opacity: 0;
+		transform: translateY(120%);
+	}
+	1% {
+		opacity: 1;
+		transform: translateY(120%);
+	}
+	80% {
+		transform: translateY(-6%);
+	}
+	90%{
+		transform: translateY(-4%);
+	}
+	100% {
+		transform: translateY(0%)
+		opacity: 1;
+	}
+}

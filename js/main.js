@@ -8,6 +8,10 @@ let images = document.querySelectorAll('.image');
 	enviroOverlay = document.querySelector('.enviroOverlay');
 	song = document.querySelector('.songs');
 	songButtons = document.querySelectorAll('.songBtn');
+	instructionsOverlay = document.querySelector('.instructionsOverlay');
+	instructionsBtn = document.querySelector('.instructions');
+	title = document.querySelector('.titleOverlayText');
+	titleOverlay = document.querySelector('.titleOverlay');
 //console.log(songButtons);
 
 
@@ -121,10 +125,23 @@ function swapSong() {
 	song.play();
 }
 
+function instructionsToggle() {
+	instructionsOverlay.classList.toggle('hidden');
+}
 
+function instructionsRemove() {
+	instructionsOverlay.classList.add('hidden');
+}
+
+function instructionsFade() {
+	instructionsOverlay.classList.remove('oneFade');
+	title.classList.remove('pulsing');
+	title.classList.add('oneZoom');
+	titleOverlay.classList.add('fadeOut');
+}
 
 //events
-pauseButton.addEventListener('click', pausePlay);
+pauseButton.addEventListener('click', pause);
 rewindButton.addEventListener('click', rewind);
 dropZones.forEach(zone=> {
 	zone.addEventListener('click', removeIcon);
@@ -133,6 +150,11 @@ songButtons.forEach(button => {
 	button.addEventListener('click', swapSong);
 })
 pauseButton.addEventListener('click', pauseSong);
+
+instructionsBtn.addEventListener('click', instructionsToggle);
+instructionsOverlay.addEventListener('click', instructionsRemove);
+instructionsOverlay.addEventListener('click', instructionsFade);
+instructionsBtn.addEventListener('click', instructionsFade);
 
 
 
