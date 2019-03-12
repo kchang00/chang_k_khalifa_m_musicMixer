@@ -3,7 +3,7 @@
 
 # Animal Tracks Music Mixer!
 
-Drag and drop different animal sounds to make your own music beat! Select a background track and get the animal band together!
+Drag and drop different animal sounds to make your own beat! Select different background tracks and get the animal band together!
 <hr>
 
 </p>
@@ -17,11 +17,7 @@ Drag and drop different animal sounds to make your own music beat! Select a back
 
 ```
 - Basic CSS and HTML (Flexbox layout)
-- Some CSS3 Animation (more to be added!)
+- Some CSS3 animation and transitions
 - JavaScript drag and drop, as well as play audio functions
-
 ```
-## Design Elements :sparkles:
-
-- [ ] Tweak Custom Characters and Icons
 

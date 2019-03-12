@@ -12,8 +12,20 @@
 
 <body>
 <h1 class="hidden">Animal Tracks Game</h1>
+		<section class="instructionsOverlay oneFade">
+			<h2 class="hidden">Instructions</h2>
+			<div class="iTopCon">
+				<div class="iSongs">Click to change the songs</div>
+				<div class="iControls">Sound controls</div>
+				<div class="iHelp">Help</div>
+			</div>
+			<div class="iBottomCon">
+				<div class="iDrag">Drag and drop the characters to add beats!</div>
+				<div class="iStart">Click anywhere to start</div>
+			</div>
+		</section>
 	<div id="container">
-		<header>
+<!-- 		<header>
 			<div id="headerCon">
 				<h1>Animal Tracks</h1>
 					<h2> Make your own music! </h2>
@@ -22,7 +34,8 @@
 					</p>
 					<a href="#enviro" class="arrowDown"></a>
 			</div>
-		</header>
+		</header> -->
+
 
 		<section id="gameArea">
 		<h2 class="hidden">Game Area</h2>
@@ -44,11 +57,16 @@
 						<div class="controlsBtn fa" id="pauseButton"> &#xf04c;</div>
 						<div class="controlsBtn fa" id="rewindButton">&#xf021;</div>
 					</div>
+
+					<div class="instructions fa">&#xf128;</div>
 						<div id="enviro">
 							<div class="dropZone"></div>
 							<div class="dropZone"></div>
 							<div class="dropZone"></div>
 							<div class="dropZone"></div>
+						</div>
+						<div class="titleOverlay">
+							<h3 class="titleOverlayText pulsing">Animal Tracks</h3>
 						</div>
 						<div class="enviroOverlay">
 							<p class="overlayText">Drag and Drop Here!</p>
