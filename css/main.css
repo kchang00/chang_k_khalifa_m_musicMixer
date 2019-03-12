@@ -18,33 +18,6 @@ background: linear-gradient(150deg, #a270ff 0%,#9263e5 47%,#7149ad 85%,#7149ad 8
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a270ff', endColorstr='#7149ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-/*h1 {
-	font-family: 'ZCOOL KuaiLe', cursive;
-	font-size: 4em;
-	font-weight: bold;
-	text-shadow:*/
-	/*trbl*/
-/*	-2px -2px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    4px 4px 0 #fff;
-	color: #9263E5;
-}*/
-
-/*h2 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 2em;
-	font-weight: bold;
-	margin: 20px;
-    text-shadow:*/
-	/*trbl*/
-/*	-2px -2px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    2px 2px 0 #fff;
-	color: #9263E5;
-}*/
-
 h3 {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-size: 4em;
@@ -144,7 +117,7 @@ header {
 	justify-content: space-around;
 	padding: 20px;
 	height: 80%;
-	background-color: #00E0BB;
+	background-color: #5a3a8a;
 	border-radius: 30px;
 	animation: left-in 1s 1;
 }
@@ -176,11 +149,11 @@ header {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	font-weight: bold;
 	box-shadow: 
-	0.5px 0.5px 0 #0E666C,
-    0px 0px 0 #0E666C,
-    0px 1px 0 #0E666C,
-    2px 5px 0 #0E666C;
-    color: #0E666C;
+	0.5px 0.5px 0 #209895,
+    0px 0px 0 #209895,
+    0px 1px 0 #209895,
+    2px 5px 0 #209895;
+    color: #1c8582;
 }
 
 .songBtn:active {
@@ -213,7 +186,7 @@ header {
 /*	background-color: #9263E5;*/
 	display: flex;
 	flex: 1;
-	border: 2.5vh #00E0BB solid;
+	border: 2.5vh #5a3a8a solid;
 	border-radius: 30px;
 	transition: all .5s ease-in-out;
 	overflow: hidden;
@@ -272,7 +245,7 @@ header {
 	top: 0;
 	border-radius: 30px;
 	background-color: #7149AD;
-	border: 2.5vh #00E0BB solid;
+	border: 2.5vh #5a3a8a solid;
 }
 
 .overlayText {
@@ -295,7 +268,7 @@ header {
 	top: 0;
 	border-radius: 30px;
 	background-color: #7149AD;
-	border: 2.5vh #00E0BB solid;
+	border: 2.5vh #5a3a8a solid;
 }
 
 .titleOverlayText {
@@ -387,7 +360,7 @@ header {
 	align-self: center;
 	/* IMPORTANT! Positions Buttons over dropZones so you can interact with them*/
 	z-index: 2;
-	background-color: #00E0BB;
+	background-color: #5a3a8a;
 	padding: 10px 20px;
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
@@ -401,11 +374,11 @@ header {
 	background-color: #28BFBB;
 	border-radius: 50px;
 	box-shadow: 
-	0.5px 0.5px 0 #0E666C,
-    0px 0px 0 #0E666C,
-    0px 1px 0 #0E666C,
-    2px 5px 0 #0E666C;
-    color: #0E666C;
+	0.5px 0.5px 0 #209895,
+    0px 0px 0 #209895,
+    0px 1px 0 #209895,
+    2px 5px 0 #209895;
+    color: #1c8582;
     margin: 10px;
 }
 
@@ -465,7 +438,37 @@ header {
 .dropZone img {
 	width: auto;
 	max-height: 100%;
+	animation: bounce 2.2s 1;
 }
+
+.dropZone #img4 {
+	max-height: 70%;
+	width: auto;
+}
+
+@-webkit-keyframes bounce {
+        0% { 
+        	transform: scale(1,1) translateY(0); 
+        }
+        2.5% {
+        		transform: scale(1.1,.9) translateY(0);
+        }
+        7.5% {
+        		transform: scale(.9,1.1) translateY(-80px);
+        }
+        12.25% {
+        		transform: scale(1.05,.85) translateY(0);
+        }
+        13% {
+        		transform: scale(1,1) translateY(-3px);
+        }
+        16% {
+        		transform: scale(1,1) translateY(0);
+        }
+        100% {
+        		transform: scale(1,1) translateY(0); 
+        }
+  	}
 
 #sounds {
 	display: flex;
@@ -473,7 +476,7 @@ header {
 	flex-direction: row;
 	margin-top: 40px;
 	padding: 20px;
-	background-color: #00E0BB;
+	background-color: #5a3a8a;
 	border-radius: 30px;
 	animation: up-in 1.1s 1 forwards;
 }
