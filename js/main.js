@@ -2,7 +2,7 @@
 
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
-	audio = document.querySelector('.audio');
+	audio = document.querySelectorAll('.audio');
 	pauseButton = document.querySelector('#pauseButton');
 	rewindButton = document.querySelector('#rewindButton');
 	enviroOverlay = document.querySelector('.enviroOverlay');
@@ -21,7 +21,6 @@ function initDrag() {
 			images.forEach(image => {
 				image.addEventListener('dragstart', function(e) {
 					console.log('draggin...');
-					e.dataTransfer.effectAllowed = "copy";
 					e.dataTransfer.setData('text/plain', this.id);
 					enviroOverlay.classList.add("overlay");
 				});
@@ -45,7 +44,6 @@ function initDrag() {
 					if (zone.firstChild == null) {
 						e.preventDefault();
 						console.log("you dropped sumpin on me");
-						e.dataTransfer.dropEffect = "copy";
 						let img = e.dataTransfer.getData('text/plain');
 
 						//debugger;
@@ -53,11 +51,19 @@ function initDrag() {
 						
 
 						//swapSource
-						let track = document.querySelector(`#${img}`);
-						let currentTrack = track.dataset.currenttrack;
-						audio.src = `audio/${currentTrack}`;
-						audio.play();
+						// let track = document.querySelector(`#${img}`);
+						// let currentTrack = track.dataset.currenttrack;
+						// audio.src = `audio/${currentTrack}`;
+						// audio.play();
+						// song.currentTime = 0;
+
+						//play audio
+						let track = document.querySelector(`audio[data-audioref="${img}"]`);
+						
 						song.currentTime = 0;
+						track.play();
+						
+						
 
 					}
 					else {return;}
@@ -69,13 +75,13 @@ function initDrag() {
 function pause() {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
-	if (audio.paused) {
-		audio.play();
+	if (audio.forEach(one => {one.paused;})) {
+		audio.forEach(one => {one.play();});
 		pauseButton.innerHTML = '&#xf04c;';
 	}
 
 	else {
-		audio.pause();
+		audio.forEach(one => {one.pause();});
 		pauseButton.innerHTML = '&#xf04b;';
 	}
 	
@@ -86,6 +92,7 @@ function pauseSong() {
 	pauseButton.style.width = '20.58px';
 	if (song.paused) {
 		song.play();
+		audio.forEach(one=>{one.currentTime=0;});
 		pauseButton.innerHTML = '&#xf04c;';
 	}
 
@@ -111,10 +118,8 @@ function rewind() {
 }
 
 function removeIcon() {
-	dropZones.forEach(zone => {
-		zone.innerHTML = null;
-		audio.pause();
-	});
+	dropZones.forEach(zone=>{this.removeChild(document.querySelector('.image'));});
+	audio.forEach(one => {one.pause();});
 }
 
 function swapSong() {
