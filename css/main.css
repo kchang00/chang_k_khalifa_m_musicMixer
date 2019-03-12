@@ -10,7 +10,12 @@
 }
 
 body {
-	background-color: #9263E5;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a270ff+0,9263e5+47,7149ad+85,7149ad+85,7149ad+100 */
+background: #a270ff; /* Old browsers */
+background: -moz-linear-gradient(-60deg, #a270ff 0%, #9263e5 47%, #7149ad 85%, #7149ad 85%, #7149ad 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-60deg, #a270ff 0%,#9263e5 47%,#7149ad 85%,#7149ad 85%,#7149ad 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(150deg, #a270ff 0%,#9263e5 47%,#7149ad 85%,#7149ad 85%,#7149ad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a270ff', endColorstr='#7149ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 /*h1 {
@@ -205,7 +210,7 @@ header {
 }
 
 #enviro {
-	background-color: #9263E5;
+/*	background-color: #9263E5;*/
 	display: flex;
 	flex: 1;
 	border: 2.5vh #00E0BB solid;
