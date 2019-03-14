@@ -60,13 +60,20 @@ function initDrag() {
 						
 
 						//swapSource
-						let track = document.querySelector(`#${img}`);
-						let currentTrack = track.dataset.currenttrack;
-						audio.src = `audio/${currentTrack}`;
-						audio.play();
+						// let track = document.querySelector(`#${img}`);
+						// let currentTrack = track.dataset.currenttrack;
+						// audio.src = `audio/${currentTrack}`;
+						// audio.play();
+						// song.currentTime = 0;
+
+						//play audio
+						let track = document.querySelector(`audio[data-audioref="${img}"]`);
+						
 						song.currentTime = 0;
+						track.play();
 
 					}
+					
 					else {return;}
 				});
 			
