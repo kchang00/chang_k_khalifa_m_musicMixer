@@ -6,12 +6,19 @@ let images = document.querySelectorAll('.image');
 	pauseButton = document.querySelector('#pauseButton');
 	rewindButton = document.querySelector('#rewindButton');
 	enviroOverlay = document.querySelector('.enviroOverlay');
+	enviro = document.querySelector('#enviro');
 	song = document.querySelector('.songs');
 	songButtons = document.querySelectorAll('.songBtn');
 	instructionsOverlay = document.querySelector('.instructionsOverlay');
 	instructionsBtn = document.querySelector('.instructions');
 	title = document.querySelector('.titleOverlayText');
 	titleOverlay = document.querySelector('.titleOverlay');
+
+// could make this more efficient by using a string with an index?
+	btn1 = document.querySelector('#btn1');
+	btn2 = document.querySelector('#btn2');
+	btn3 = document.querySelector('#btn3');
+	btn4 = document.querySelector('#btn4');
 //console.log(songButtons);
 
 
@@ -140,6 +147,19 @@ function instructionsFade() {
 	titleOverlay.classList.add('fadeOut');
 }
 
+function swapBg1() {
+	enviro.style.backgroundImage = 'url(images/enviro1.svg)';
+}
+function swapBg2() {
+	enviro.style.backgroundImage = 'url(images/enviro2.svg)';
+}
+function swapBg3() {
+	enviro.style.backgroundImage = 'url(images/enviro3.svg)';
+}
+function swapBg4() {
+	enviro.style.backgroundImage = 'url(images/enviro4.svg)';
+}
+
 //events
 pauseButton.addEventListener('click', pause);
 rewindButton.addEventListener('click', rewind);
@@ -156,6 +176,10 @@ instructionsOverlay.addEventListener('click', instructionsRemove);
 instructionsOverlay.addEventListener('click', instructionsFade);
 instructionsBtn.addEventListener('click', instructionsFade);
 
+btn1.addEventListener('click', swapBg1);
+btn2.addEventListener('click', swapBg2);
+btn3.addEventListener('click', swapBg3);
+btn4.addEventListener('click', swapBg4);
 
 
 })();
