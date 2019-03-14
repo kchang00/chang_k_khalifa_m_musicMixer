@@ -138,6 +138,7 @@ function swapSong() {
 	let currentSong = this.dataset.currentsong;
 	song.src = `audio/${currentSong}`;
 	song.load();
+	audio.forEach(sound=>{sound.currentTime=0;});
 	song.play();
 }
 
