@@ -2,7 +2,7 @@
 
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
-	audio = document.querySelector('.audio');
+	audio = document.querySelectorAll('.audio');
 	pauseButton = document.querySelector('#pauseButton');
 	rewindButton = document.querySelector('#rewindButton');
 	enviroOverlay = document.querySelector('.enviroOverlay');
@@ -73,7 +73,7 @@ function initDrag() {
 						track.play();
 
 					}
-					
+
 					else {return;}
 				});
 			
@@ -83,15 +83,17 @@ function initDrag() {
 function pause() {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
-	if (audio.paused) {
-		audio.play();
+
+		if (audio.forEach(sound=>{sound.paused})) {
+		audio.forEach(sound=>{sound.play();});
 		pauseButton.innerHTML = '&#xf04c;';
 	}
 
 	else {
-		audio.pause();
+		audio.forEach(sound=>{sound.pause();});
 		pauseButton.innerHTML = '&#xf04b;';
 	}
+	
 	
 }
 
@@ -127,7 +129,7 @@ function rewind() {
 function removeIcon() {
 	dropZones.forEach(zone => {
 		zone.innerHTML = null;
-		audio.pause();
+		audio.forEach(sound=>{sound.pause();});
 	});
 }
 
