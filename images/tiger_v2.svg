@@ -5,18 +5,32 @@
 
         .a_hand_l {
           <!-- animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction]*/ -->
-            animation: a-hand-l .5s ease infinite alternate;
+            animation: a-hand-l 1s ease-out infinite reverse;
+            transform-origin: right;
+        }
+
+        .a_upperarm_l {
+            animation: a-hand-l 1s ease-in-out -.06s infinite reverse;
+            transform-origin: right;
+        }
+
+        .a_lowerarm_l {
+            animation: a-hand-l 1s ease-in-out -.01s infinite reverse;
             transform-origin: right;
         }
 
         @keyframes a-hand-l{
         0% { 
-          transform: rotate(0deg);
-          translate: translate(0px, 0px);
+          transform: rotate(0deg) translate(0px, 0px);
         }
-        100%{
-          transform: rotate(3deg);
-          translate: translate(1px, 2px);
+        25% {
+          transform: rotate(-1deg) translate(0px, -2px);
+        }
+        75%{
+          transform: rotate(3deg) translate(1px, -3px);
+        }
+        100% {
+          transform: rotate(0deg) translate(0px, 0px)
         }
         }
 
@@ -87,6 +101,26 @@
             100% { 
               transform: rotate(0)
             }
+        }
+
+        .a_head {
+          animation: a-head 1s ease infinite;
+          transform-origin: 50% 50%;
+        }
+
+        @keyframes a-head {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(2deg);
+          }
+          75% {
+            transform: rotate(-7deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
         }
     </style>
     <radialGradient id="radial-gradient" cx="172.54" cy="130" r="68.14" gradientTransform="rotate(-9.06 -35.999 146.574) scale(1 1.25)" gradientUnits="userSpaceOnUse">
@@ -326,9 +360,9 @@
       </g>
       <path id="body_main" d="M181.72 222.69a7.86 7.86 0 0 0-1.51-1.43c-.29-3-1.93-6.53-5.6-10.76 0 0-22.94-17.28-20.08-122.81C96.9 37 39.41 101.5 38.56 103.4c0 0 10.82 22.8 15.67 44.88a55.94 55.94 0 0 1-2.11 31c-2.32 6.43-4.48 14.79-3.33 21.52a10.86 10.86 0 0 0 1.61 3.83c.47.76.52 2.55-2.57 6.7 0 0-2.7 4.74-.9 9.79a7.66 7.66 0 0 0 4.24 14h124.57a7.66 7.66 0 0 0 5.98-12.43z" fill="url(#linear-gradient)"/>
       <path id="body_pocket" d="M63 178.12c-2.19 10.6-.46 23.93.12 27.76a2 2 0 0 0 1.17 1.53c31.52 13.91 72.54 10.32 86 8.63a2 2 0 0 0 1.34-3.19c-4.67-6-5.81-19.19-6.06-23.67a2 2 0 0 0-1.62-1.83c-57.65-11.84-74.76-11.44-79.24-10.83a2 2 0 0 0-1.71 1.6z" fill="url(#linear-gradient-2)"/>
-      <path id="upperarm_left" d="M22.76 137.3a16.89 16.89 0 0 1-.65-24.3l30.07-30.91a17.94 17.94 0 0 1 24.91-.64 16.89 16.89 0 0 1 .65 24.29l-30.07 30.92a17.93 17.93 0 0 1-24.91.64z" fill="url(#linear-gradient-3)"/>
+      <path id="upperarm_left" class="a_upperarm_l" d="M22.76 137.3a16.89 16.89 0 0 1-.65-24.3l30.07-30.91a17.94 17.94 0 0 1 24.91-.64 16.89 16.89 0 0 1 .65 24.29l-30.07 30.92a17.93 17.93 0 0 1-24.91.64z" fill="url(#linear-gradient-3)"/>
 
-      <path id="lowerarm_left" d="M9.58 106.81l5.55-5.69c5.17-5.3 14.19-5.13 20.15.4l13.63 12.63c6 5.53 6.59 14.31 1.42 19.61l-5.54 5.69c-5.18 5.31-14.2 5.13-20.16-.4L11 126.42c-5.95-5.53-6.59-14.31-1.42-19.61z" fill="url(#linear-gradient-4)"/>
+      <path id="lowerarm_left" class="a_lowerarm_l" d="M9.58 106.81l5.55-5.69c5.17-5.3 14.19-5.13 20.15.4l13.63 12.63c6 5.53 6.59 14.31 1.42 19.61l-5.54 5.69c-5.18 5.31-14.2 5.13-20.16-.4L11 126.42c-5.95-5.53-6.59-14.31-1.42-19.61z" fill="url(#linear-gradient-4)"/>
       <g id="hand_left" class="a_hand_l">
         <path d="M38.63 102.74a23 23 0 0 0-32 0 21.68 21.68 0 0 0 0 31.21l7 6.84a7.19 7.19 0 0 0 5.94 2l.5-.08a8.27 8.27 0 0 0 5.77-4.52 7.26 7.26 0 0 0 .47-5.44l-1-1c.27.13.54.25.83.36a7.43 7.43 0 0 0-.37-.81l1 1a7.85 7.85 0 0 0 5.59-.46 8.37 8.37 0 0 0 4-3.89 7.31 7.31 0 0 0 .48-5.46l-1.05-1a6.71 6.71 0 0 0 .83.36 9.69 9.69 0 0 0-.37-.81l1 1a7.74 7.74 0 0 0 4.3 0 8.13 8.13 0 0 0 6.07-7.81v-.09a6.71 6.71 0 0 0-2.05-4.53z" fill="url(#radial-gradient-2)"/>
         <path d="M35 127.09c1.94.34 3.25 7 3.25 7a.6.6 0 0 1-.8.78s-6.84-1.27-7.2-3.16c-.34-1.6 3.06-4.92 4.75-4.62z" fill="url(#linear-gradient-5)"/>
@@ -342,7 +376,7 @@
         <ellipse id="headphones_left_inside" cx="60.19" cy="92.12" rx="6.8" ry="6.63" fill="#056574"/>
       </g>
       <path id="upperarm_right" class="a_lower_arm_r" d="M155.15 180.61a17.48 17.48 0 0 1-18.9-15.83L131.53 104a17.33 17.33 0 0 1 16.24-18.43 17.48 17.48 0 0 1 18.89 15.84l4.73 60.77a17.33 17.33 0 0 1-16.24 18.43z" fill="url(#linear-gradient-8)"/>
-      <g id="head">
+      <g id="head" class="a_head">
         <path id="head_main" d="M101.62 32.56C121.8 21.81 132.44 37 133.71 39a.36.36 0 0 1 0 .41c-5.92 8.21-9.86 10-11.23 10.38a.38.38 0 0 0-.21.58l5.17 7.59a.38.38 0 0 1-.37.59l-4-.44a.38.38 0 0 0-.27.68l2.2 1.52a.38.38 0 0 1-.16.69l-1.25.22a12 12 0 0 0-6.72 3.67 146.8 146.8 0 0 0-16.61 21.46 12.85 12.85 0 0 1-5.77 5c-3.93 1.68-6.88 1.12-9 0-2.47-1.39-4.39-3.93-4.27-6.72.7-16-14.52-27.38-14.54-27.38-26.14 4.65-5.91-36.89-1.06-37.76 22.9-5.2 33.93 10.59 35.44 13a.39.39 0 0 0 .56.07z" fill="url(#linear-gradient-9)"/>
         <g id="hat">
           <path id="hat_main" d="M120.81 37.65c.21-44.74-72.13-49-58.09-16 28.85 8.65 58.09 16 58.09 16z" fill="url(#linear-gradient-10)"/>
