@@ -29,8 +29,8 @@
 		<section id="gameArea">
 		<h2 class="hidden">Game Area</h2>
 			<div id="gameCon">
-				<nav id="beats">
-				<h3 class="hidden">Beats Navigation</h3>
+				<nav id="music">
+				<h3 class="hidden">Music Navigation</h3>
 					<ul>
 						<li><div data-currentsong="song1.mp3" class="songBtn" id="btn1" tabindex="0">1</div></li>
 						<li><div data-currentsong="song2.mp3" class="songBtn" id="btn2" tabindex="1">2</div></li>
@@ -39,39 +39,42 @@
 					</ul>
 				</nav>
 
-				<div id="enviroSoundsCon">
-					<div id="enviroCon">
+				<div id="enviroCon">
+					<div id="enviroOverlayCon">
+						<div id="controls">
+							<div class="controlsBtn fa" id="pauseButton" tabindex="5"> &#xf04c;</div>
+							<div class="controlsBtn fa" id="rewindButton" tabindex="6">&#xf021;</div>
+						</div>
 
-					<div id="controls">
-						<div class="controlsBtn fa" id="pauseButton" tabindex="5"> &#xf04c;</div>
-						<div class="controlsBtn fa" id="rewindButton" tabindex="6">&#xf021;</div>
-					</div>
+						<div class="instructions fa">&#xf128;</div>
 
-					<div class="instructions fa">&#xf128;</div>
 						<div id="enviro">
 							<div class="dropZone"></div>
 							<div class="dropZone"></div>
 							<div class="dropZone"></div>
 							<div class="dropZone"></div>
 						</div>
+
 						<div class="bgOverlay"></div>
+
 						<div class="titleOverlay">
 							<h3 class="titleOverlayText pulsing">Animal Tracks</h3>
 						</div>
+
 						<div class="enviroOverlay">
 							<p class="overlayText">Drag and Drop Here!</p>
 						</div>
 					</div>
-
-					<nav id="sounds">
-					<h3 class="hidden">Sounds Navigation</h3>
-						<img class="image" id="img1" src="images/tiger_v2.svg" alt="tiger" draggable>
-						<img class="image" id="img2" src="images/dog_v2.svg" alt="dog" draggable>
-						<img class="image" id="img3" src="images/horse_v2.svg" alt="horse" draggable>
-						<img class="image" id="img4" src="images/bird_v2.svg" alt="bird" draggable>
-					</nav>
 				</div>
 			</div>
+
+			<nav id="animals">
+			<h3 class="hidden">Animals Navigation</h3>
+				<img class="image" id="img1" src="images/tiger_v2.svg" alt="tiger" draggable>
+				<img class="image" id="img2" src="images/dog_v2.svg" alt="dog" draggable>
+				<img class="image" id="img3" src="images/horse_v2.svg" alt="horse" draggable>
+				<img class="image" id="img4" src="images/bird_v2.svg" alt="bird" draggable>
+			</nav>
 		</section>
 
 		<audio data-audioref="img1" class="audio" src="audio/tiger.mp3" loop></audio>
