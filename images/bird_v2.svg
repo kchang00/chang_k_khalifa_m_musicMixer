@@ -2,95 +2,96 @@
   <defs>
     <style>
       .cls-7{fill:#ffe467}.cls-10{fill:#aa272f}.cls-11{fill:#000008}.cls-12{fill:#fff}.cls-13{fill:#07070f}.cls-14{fill:#3a3a42}
-        .wlr {
-          <!-- animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction]*/ -->
-            animation: wlr 1s ease infinite alternate;
-            transform-origin: 50% 50%;
-        }
 
-        @keyframes wlr {
-        0% { 
-          transform: rotate(0deg);
-        }
-        30%{
-          transform: rotate(3deg);
-        }
-        40% {
-          transform: rotate(-1deg);
-        }
-        50% {
-          transform: rotate(3deg);
-        }
-        100% {
-          transform: rotate(0deg);
-        }
-        }
-
-        .wrr {
-            animation: wrr 4s ease-in-out infinite -1s alternate;
-            transform-origin: left;
-        }
-
-        @keyframes wrr {
-        0% {
-          transform: translate(0,0) rotate(0deg);
-        }
-        30% {
-          transform: translate(3px, 2px) rotate(10deg); 
-        }
-        40% {
-          transform: translate(1.5px, 1px) rotate(5deg); 
-        }
-        50% {
-          transform: translate(3px, 2px) rotate(10deg); 
-        }
-        100% {
-          transform: translate(3px, 2px) rotate(10deg);
-        }
-        }
-
-        .hr {
-          animation: hr 1.3s ease infinite 1s alternate;
-          transform-origin: 100% 100%;
-        }
-
-        @keyframes hr {
-        0% {
-          transform: translate(0,0) rotate(0deg);
-        }
-        50% {
-          transform: translate(2px,-3px) rotate(2deg);
-        }
-        60% {
-          transform: translate(2px,-3px) rotate(3deg);
-        }
-        70% {
-          transform: translate(2px,-3px) rotate(2deg);
-        }
-        100% {
-          transform: translate(2px,-3px) rotate(2deg);
-        }
-        }
-
-        .a_eye {
-          animation: a-eye 5s infinite alternate;
+      .wlr {
+        <!-- animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction]*/ -->
+          animation: wlr 1s ease infinite alternate;
           transform-origin: 50% 50%;
-        }
+      }
 
-        @keyframes a-eye {
-          0% {
-            transform: translateY(0px) scaleY(1);
-          }
-          5% {
-            transform: translateY(-37px) scaleY(0.1);
-          }
-          10% {
-            transform: translateY(0px) scaleY(1);
-          }
-          100% {
-            transform: translateY(0px) scaleY(1);
-          }
+      @keyframes wlr {
+      0% { 
+        transform: rotate(0deg);
+      }
+      30%{
+        transform: rotate(3deg);
+      }
+      40% {
+        transform: rotate(-1deg);
+      }
+      50% {
+        transform: rotate(3deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+      }
+
+      .wrr {
+          animation: wrr 4s ease-in-out infinite -1s alternate;
+          transform-origin: left;
+      }
+
+      @keyframes wrr {
+      0% {
+        transform: translate(0,0) rotate(0deg);
+      }
+      30% {
+        transform: translate(3px, 2px) rotate(10deg); 
+      }
+      40% {
+        transform: translate(1.5px, 1px) rotate(5deg); 
+      }
+      50% {
+        transform: translate(3px, 2px) rotate(10deg); 
+      }
+      100% {
+        transform: translate(3px, 2px) rotate(10deg);
+      }
+      }
+
+      .hr {
+        animation: hr 1.3s ease infinite 1s alternate;
+        transform-origin: 100% 100%;
+      }
+
+      @keyframes hr {
+      0% {
+        transform: translate(0,0) rotate(0deg);
+      }
+      50% {
+        transform: translate(2px,-3px) rotate(2deg);
+      }
+      60% {
+        transform: translate(2px,-3px) rotate(3deg);
+      }
+      70% {
+        transform: translate(2px,-3px) rotate(2deg);
+      }
+      100% {
+        transform: translate(2px,-3px) rotate(2deg);
+      }
+      }
+
+      .a_eye {
+        animation: a-eye 5s infinite alternate;
+        transform-origin: 50% 50%;
+      }
+
+      @keyframes a-eye {
+        0% {
+          transform: translateY(0px) scaleY(1);
         }
+        5% {
+          transform: translateY(-37px) scaleY(0.1);
+        }
+        10% {
+          transform: translateY(0px) scaleY(1);
+        }
+        100% {
+          transform: translateY(0px) scaleY(1);
+        }
+      }
     </style>
     <radialGradient id="radial-gradient" cx="137.54" cy="91.72" r="49.8" gradientTransform="matrix(1 0 0 2.92 0 -176.54)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#aa272f"/>
@@ -153,7 +154,7 @@
       <stop offset="1" stop-color="#aa272f"/>
     </radialGradient>
   </defs>
-  <g id="Layer_2" data-name="Layer 2">
+  <g id="Layer_2" data-name="Layer 2" >
     <g id="bird">
       <g id="wing_left" class="wlr">
         <path id="wing_left-2" data-name="wing_left" d="M104.22 100.72c-5.25-28.16 45.33-45.46 56-74.07S166.85 0 166.85 0c18.76 12.9-2.76 57.81-8.16 68.32a.33.33 0 0 0 .55.37c9.47-10.51 11.28-16.93 17.26-31.09 5.2 11.77-12.56 38.39-19 47.47a.33.33 0 0 0 .51.42c17.73-17.74 16.52-28.6 16.52-21.27-.33 17-12.64 27.28-12.64 27.28 15.3 4.66 1.33 16 1.33 16 11.31 19.3-4 27.28-4 27.28 11.31 10.65-6 14.64-6 14.64 6 26-15.31 21.3-15.31 21.3-3.33 18.63-22 11.31-22 11.31-32.58-27.95-11.69-81.31-11.69-81.31z" fill="url(#radial-gradient)"/>
