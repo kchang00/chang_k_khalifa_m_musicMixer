@@ -1,5 +1,6 @@
 (() => {
 
+
 let images = document.querySelectorAll('.image');
 	dropZones = document.querySelectorAll('.dropZone');
 	audio = document.querySelectorAll('.audio');
@@ -80,12 +81,12 @@ function initDrag() {
 	});
 
 //functions
-function pause() {
+function pause(e) {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
 
-		if (audio.forEach(sound=>{sound.paused})) {
-		audio.forEach(sound=>{sound.play();});
+		if (this.paused) {
+		this.play();
 		pauseButton.innerHTML = '&#xf04c;';
 	}
 
