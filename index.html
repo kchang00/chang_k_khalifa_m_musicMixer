@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700%7CZCOOL+KuaiLe" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
@@ -15,13 +16,16 @@
 		<section class="instructionsOverlay oneFade">
 			<h2 class="hidden">Instructions</h2>
 			<div class="iTopCon">
-				<div class="iSongs">Click to change the songs</div>
-				<div class="iControls">Sound controls</div>
-				<div class="iHelp">Help</div>
+				<div class="iSongs"><p>Click to change the songs and backgrounds<p></div>
+				<div class="iControls"><p>Sound controls<p></div>
+				<div class="iHelp"><p>Help<p></div>
 			</div>
 			<div class="iBottomCon">
-				<div class="iDrag">Drag and drop the characters to add beats!</div>
-				<div class="iStart">Click anywhere to start</div>
+				<div class="iDrag">
+					<p>Drag and drop the characters to add beats!</p>
+					<p>(Click to remove characters)</p>
+				</div>
+				<div class="iStart"><p>Click anywhere to start<p></div>
 			</div>
 		</section>
 	<div id="container">
@@ -32,10 +36,10 @@
 				<nav id="music">
 				<h3 class="hidden">Music Navigation</h3>
 					<ul>
-						<li><div data-currentsong="song1.mp3" class="songBtn" id="btn1" tabindex="0">1</div></li>
-						<li><div data-currentsong="song2.mp3" class="songBtn" id="btn2" tabindex="1">2</div></li>
-						<li><div data-currentsong="song3.mp3" class="songBtn" id="btn3" tabindex="2">3</div></li>
-						<li><div data-currentsong="song4.mp3" class="songBtn" id="btn4" tabindex="4">4</div></li>
+						<li><div data-currentsong="song1.mp3" class="songBtn" id="btn1" tabindex="0"><img src="images/icon1.svg" alt="Day Scene"></div></li>
+						<li><div data-currentsong="song2.mp3" class="songBtn" id="btn2" tabindex="1"><img src="images/icon2.svg" alt="Jungle Scene"></div></li>
+						<li><div data-currentsong="song3.mp3" class="songBtn" id="btn3" tabindex="2"><img src="images/icon3.svg" alt="Night Scene"></div></li>
+						<li><div data-currentsong="song4.mp3" class="songBtn" id="btn4" tabindex="4"><img src="images/icon4.svg" alt="Water Scene"></div></li>
 					</ul>
 				</nav>
 

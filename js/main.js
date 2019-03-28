@@ -159,7 +159,7 @@ function instructionsFade() {
 }
 
 function swapBg1() {
-	enviro.style.backgroundImage = 'url(images/enviro10.svg)';
+	enviro.style.backgroundImage = 'url(images/enviro1.svg)';
 }
 function swapBg2() {
 	enviro.style.backgroundImage = 'url(images/enviro2.svg)';
