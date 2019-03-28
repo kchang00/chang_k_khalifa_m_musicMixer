@@ -90,62 +90,43 @@ function pause() {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
 
-	if (sound1.paused || sound2.paused || sound3.paused || sound4.paused) {
+	if (sound1.paused || sound2.paused || sound3.paused || sound4.paused || song.paused) {
 		audio.forEach(sound=>{sound.play();});
+		song.play();
 		pauseButton.innerHTML = '&#xf04c;';
 	}
 
 	else {
+		song.pause();
 		audio.forEach(sound=>{sound.pause();});
 		pauseButton.innerHTML = '&#xf04b;';
 	}
 	
  }
 
-// function pause() {
+
+// function pauseSong() {
 // 	// accounts for different icon size
 // 	pauseButton.style.width = '20.58px';
-
-// 	if (sound1.paused || sound2.paused || sound3.paused || sound4.paused) {
-// 		if (dropZones.hasChild(img1)) {
-// 			sound1.play();
-// 		}
+// 	if (song.paused) {
+// 		song.play();
 // 		pauseButton.innerHTML = '&#xf04c;';
 // 	}
 
+// 	// else if (dropZones.forEach(zone => {
+// 	// 	zone.firstChild == null;
+// 	// 	console.log('hi')
+// 	// })) {
+// 	// 	song.pause();
+// 	// 	audio.pause();
+// 	// }
+
 // 	else {
-// 		sound1.pause();
-// 		sound2.pause();
-// 		sound3.pause();
-// 		sound4.pause();
+// 		song.pause();
 // 		pauseButton.innerHTML = '&#xf04b;';
 // 	}
 	
-	
 // }
-
-function pauseSong() {
-	// accounts for different icon size
-	pauseButton.style.width = '20.58px';
-	if (song.paused) {
-		song.play();
-		pauseButton.innerHTML = '&#xf04c;';
-	}
-
-	// else if (dropZones.forEach(zone => {
-	// 	zone.firstChild == null;
-	// 	console.log('hi')
-	// })) {
-	// 	song.pause();
-	// 	audio.pause();
-	// }
-
-	else {
-		song.pause();
-		pauseButton.innerHTML = '&#xf04b;';
-	}
-	
-}
 
 function rewind() {
 	dropZones.forEach(zone => {
@@ -206,7 +187,7 @@ dropZones.forEach(zone=> {
 songButtons.forEach(button => {
 	button.addEventListener('click', swapSong);
 })
-pauseButton.addEventListener('click', pauseSong);
+// pauseButton.addEventListener('click', pauseSong);
 
 instructionsBtn.addEventListener('click', instructionsToggle);
 instructionsOverlay.addEventListener('click', instructionsRemove);
