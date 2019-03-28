@@ -15,6 +15,11 @@ let images = document.querySelectorAll('.image');
 	title = document.querySelector('.titleOverlayText');
 	titleOverlay = document.querySelector('.titleOverlay');
 
+// to be fix the pasue/play bug
+	sound1 = document.querySelector('#sound1');
+	sound2 = document.querySelector('#sound2');
+	sound3 = document.querySelector('#sound3');
+	sound4 = document.querySelector('#sound4');	
 // could make this more efficient by using a string with an index?
 	btn1 = document.querySelector('#btn1');
 	btn2 = document.querySelector('#btn2');
@@ -81,12 +86,12 @@ function initDrag() {
 	});
 
 //functions
-function pause(e) {
+function pause() {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
 
-		if (this.paused) {
-		this.play();
+	if (sound1.paused || sound2.paused || sound3.paused || sound4.paused) {
+		audio.forEach(sound=>{sound.play();});
 		pauseButton.innerHTML = '&#xf04c;';
 	}
 
@@ -95,8 +100,29 @@ function pause(e) {
 		pauseButton.innerHTML = '&#xf04b;';
 	}
 	
+ }
+
+// function pause() {
+// 	// accounts for different icon size
+// 	pauseButton.style.width = '20.58px';
+
+// 	if (sound1.paused || sound2.paused || sound3.paused || sound4.paused) {
+// 		if (dropZones.hasChild(img1)) {
+// 			sound1.play();
+// 		}
+// 		pauseButton.innerHTML = '&#xf04c;';
+// 	}
+
+// 	else {
+// 		sound1.pause();
+// 		sound2.pause();
+// 		sound3.pause();
+// 		sound4.pause();
+// 		pauseButton.innerHTML = '&#xf04b;';
+// 	}
 	
-}
+	
+// }
 
 function pauseSong() {
 	// accounts for different icon size
