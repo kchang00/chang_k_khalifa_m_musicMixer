@@ -1,6 +1,6 @@
 (() => {
 
-const index = [0, 1, 2, 3]
+// const index = [0, 1, 2, 3]
 let images = document.querySelectorAll('.image'),
 	dropZones = document.querySelectorAll('.dropZone'),
 	audio = document.querySelectorAll('.audio'),
@@ -14,7 +14,6 @@ let images = document.querySelectorAll('.image'),
 	instructionsBtn = document.querySelector('.instructions'),
 	title = document.querySelector('.titleOverlayText'),
 	titleOverlay = document.querySelector('.titleOverlay'),
-	songBtn = document.querySelectorAll('.songBtn'),
 	activeAnimal = [],
 	dropped = [],
 	activeSong = [],
@@ -27,28 +26,28 @@ let images = document.querySelectorAll('.image'),
 	sound3 = document.querySelector('#sound3');
 	sound4 = document.querySelector('#sound4');	
 // could make this more efficient by using a string with an index?
-	btn1 = document.querySelector('#btn1');
-	btn2 = document.querySelector('#btn2');
-	btn3 = document.querySelector('#btn3');
-	btn4 = document.querySelector('#btn4');
+	// btn1 = document.querySelector('#btn1');
+	// btn2 = document.querySelector('#btn2');
+	// btn3 = document.querySelector('#btn3');
+	// btn4 = document.querySelector('#btn4');
 //console.log(songButtons);
 
 
 initDrag();
 
 function initDrag() {
-			images.forEach(image => {
-				image.addEventListener('dragstart', function(e) {
-					console.log('draggin...');
-					e.dataTransfer.effectAllowed = "copy";
-					e.dataTransfer.setData('text/plain', this.id);
-					enviroOverlay.classList.add("overlay");
-				});
-				image.addEventListener('dragend', function(e) {
-					enviroOverlay.classList.remove("overlay");
-				});
-			});
-		}
+	images.forEach(image => {
+		image.addEventListener('dragstart', function(e) {
+			console.log('draggin...');
+			e.dataTransfer.effectAllowed = "copy";
+			e.dataTransfer.setData('text/plain', this.id);
+			enviroOverlay.classList.add("overlay");
+		});
+		image.addEventListener('dragend', function(e) {
+			enviroOverlay.classList.remove("overlay");
+		});
+	});
+}
 
 	//handle drag over and drop
 	dropZones.forEach(zone => {
@@ -57,8 +56,6 @@ function initDrag() {
 				console.log("you dragged over me!");
 				
 			});
-
-				
 
 				zone.addEventListener("drop", function(e) {
 					if (zone.firstChild == null) {
@@ -71,22 +68,12 @@ function initDrag() {
 						e.target.appendChild(document.querySelector(`#${img}`));
 						let droppedImg = document.querySelector(`#${img}`);
 						dropped.push(droppedImg);
-						
-
-						//swapSource
-						// let track = document.querySelector(`#${img}`);
-						// let currentTrack = track.dataset.currenttrack;
-						// audio.src = `audio/${currentTrack}`;
-						// audio.play();
-						// song.currentTime = 0;
 
 						//play audio
 						let track = document.querySelector(`audio[data-audioref="${img}"]`);
 						activeAnimal.push(track);
-
 						song.currentTime = 0;
 						track.play();
-
 					}
 
 					else {return;}
@@ -95,6 +82,7 @@ function initDrag() {
 	});
 
 //functions
+
 function pause() {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
@@ -153,17 +141,23 @@ function instructionsFade() {
 	titleOverlay.classList.add('fadeOut');
 }
 
-function swapBg1() {
-	enviro.style.backgroundImage = 'url(images/enviro1.svg)';
-}
-function swapBg2() {
-	enviro.style.backgroundImage = 'url(images/enviro2.svg)';
-}
-function swapBg3() {
-	enviro.style.backgroundImage = 'url(images/enviro3.svg)';
-}
-function swapBg4() {
-	enviro.style.backgroundImage = 'url(images/enviro4.svg)';
+function swapBG() {
+	//debugger;
+	if (this.id == 'btn1') {
+		enviro.style.backgroundImage = 'url(images/enviro1.svg)';
+	}
+
+	else if (this.id == 'btn2') {
+		enviro.style.backgroundImage = 'url(images/enviro2.svg)';
+	}
+
+	else if (this.id == 'btn3') {
+		enviro.style.backgroundImage = 'url(images/enviro3.svg)';
+	}
+
+	else {
+		enviro.style.backgroundImage = 'url(images/enviro4.svg)';
+	}
 }
 
 //events
@@ -175,17 +169,12 @@ dropZones.forEach(zone=> {
 songButtons.forEach(button => {
 	button.addEventListener('click', swapSong);
 })
-// pauseButton.addEventListener('click', pauseSong);
-
+songButtons.forEach(button => {
+	button.addEventListener('click', swapBG);
+})
 instructionsBtn.addEventListener('click', instructionsToggle);
 instructionsOverlay.addEventListener('click', instructionsRemove);
 instructionsOverlay.addEventListener('click', instructionsFade);
 instructionsBtn.addEventListener('click', instructionsFade);
 
-btn1.addEventListener('click', swapBg1);
-btn2.addEventListener('click', swapBg2);
-btn3.addEventListener('click', swapBg3);
-btn4.addEventListener('click', swapBg4);
-
-console.log(dropped);
 })();
