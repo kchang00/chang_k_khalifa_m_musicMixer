@@ -38,7 +38,6 @@ initDrag();
 function initDrag() {
 	images.forEach(image => {
 		image.addEventListener('dragstart', function(e) {
-			console.log('draggin...');
 			e.dataTransfer.effectAllowed = "copy";
 			e.dataTransfer.setData('text/plain', this.id);
 			enviroOverlay.classList.add("overlay");
@@ -53,14 +52,11 @@ function initDrag() {
 	dropZones.forEach(zone => {
 			zone.addEventListener("dragover", function(e) {
 				e.preventDefault();
-				console.log("you dragged over me!");
-				
 			});
 
 				zone.addEventListener("drop", function(e) {
 					if (zone.firstChild == null) {
 						e.preventDefault();
-						console.log("you dropped sumpin on me");
 						e.dataTransfer.dropEffect = "copy";
 						let img = e.dataTransfer.getData('text/plain');
 
@@ -90,30 +86,46 @@ function pause() {
 	if (sound1.paused && sound2.paused && sound3.paused && sound4.paused && song.paused) {
 		pauseButton.innerHTML = '&#xf04c;';
 		activeAnimal.forEach(sound=>{sound.play();});
-		activeSong[0].play();
+		if (!activeSong[0] == '') {
+			activeSong[0].play();
+		}
+		
 	}
 
 	else {
 		pauseButton.innerHTML = '&#xf04b;';
 		activeAnimal.forEach(sound=>{sound.pause();});
-		activeSong[0].pause();
+		if (!activeSong[0] == '') {
+			activeSong[0].pause();
+		}
 	}
 	
  }
 
-function rewind() {
-	dropZones.forEach(zone => {
-		window.location.reload();
-	});
+function reset() {
+	enviro.style.background = 'none';
+	animalCon.appendChild(images[0]);
+	animalCon.appendChild(images[1]);
+	animalCon.appendChild(images[2]);
+	animalCon.appendChild(images[3]);
+	activeAnimal.forEach(sound=>{sound.pause();});
+	if (!activeSong[0] == '') {
+			activeSong[0].pause();
+		}
+	activeAnimal = [];
+	activeSong = [];
+
 }
 
 function removeIcon() {
+	if (!this.firstChild == '') {
 		let unwanted = this.firstChild;
 		animalCon.appendChild(unwanted);
 		let unwantedID = unwanted.id;
 		let unwantedAud = document.querySelector(`audio[data-audioref="${unwantedID}"]`);
 		unwantedAud.pause();
 		activeAnimal.splice(unwantedAud);
+	}
 }
 
 function swapSong() {
@@ -162,7 +174,7 @@ function swapBG() {
 
 //events
 pauseButton.addEventListener('click', pause);
-rewindButton.addEventListener('click', rewind);
+rewindButton.addEventListener('click', reset);
 dropZones.forEach(zone=> {
 	zone.addEventListener('click', removeIcon);
 });
