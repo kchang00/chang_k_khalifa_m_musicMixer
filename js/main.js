@@ -1,19 +1,25 @@
 (() => {
 
+const index = [0, 1, 2, 3]
+let images = document.querySelectorAll('.image'),
+	dropZones = document.querySelectorAll('.dropZone'),
+	audio = document.querySelectorAll('.audio'),
+	pauseButton = document.querySelector('#pauseButton'),
+	rewindButton = document.querySelector('#rewindButton'),
+	enviroOverlay = document.querySelector('.enviroOverlay'),
+	enviro = document.querySelector('#enviro'),
+	song = document.querySelector('.songs'),
+	songButtons = document.querySelectorAll('.songBtn'),
+	instructionsOverlay = document.querySelector('.instructionsOverlay'),
+	instructionsBtn = document.querySelector('.instructions'),
+	title = document.querySelector('.titleOverlayText'),
+	titleOverlay = document.querySelector('.titleOverlay'),
+	songBtn = document.querySelectorAll('.songBtn'),
+	activeAnimal = [],
+	dropped = [],
+	activeSong = [],
+	animalCon = document.querySelector('#animals');
 
-let images = document.querySelectorAll('.image');
-	dropZones = document.querySelectorAll('.dropZone');
-	audio = document.querySelectorAll('.audio');
-	pauseButton = document.querySelector('#pauseButton');
-	rewindButton = document.querySelector('#rewindButton');
-	enviroOverlay = document.querySelector('.enviroOverlay');
-	enviro = document.querySelector('#enviro');
-	song = document.querySelector('.songs');
-	songButtons = document.querySelectorAll('.songBtn');
-	instructionsOverlay = document.querySelector('.instructionsOverlay');
-	instructionsBtn = document.querySelector('.instructions');
-	title = document.querySelector('.titleOverlayText');
-	titleOverlay = document.querySelector('.titleOverlay');
 
 // to be fix the pasue/play bug
 	sound1 = document.querySelector('#sound1');
@@ -63,6 +69,8 @@ function initDrag() {
 
 						//debugger;
 						e.target.appendChild(document.querySelector(`#${img}`));
+						let droppedImg = document.querySelector(`#${img}`);
+						dropped.push(droppedImg);
 						
 
 						//swapSource
@@ -74,7 +82,8 @@ function initDrag() {
 
 						//play audio
 						let track = document.querySelector(`audio[data-audioref="${img}"]`);
-						
+						activeAnimal.push(track);
+
 						song.currentTime = 0;
 						track.play();
 
@@ -90,43 +99,19 @@ function pause() {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
 
-	if (sound1.paused || sound2.paused || sound3.paused || sound4.paused || song.paused) {
-		audio.forEach(sound=>{sound.play();});
-		song.play();
+	if (sound1.paused && sound2.paused && sound3.paused && sound4.paused && song.paused) {
 		pauseButton.innerHTML = '&#xf04c;';
+		activeAnimal.forEach(sound=>{sound.play();});
+		activeSong[0].play();
 	}
 
 	else {
-		song.pause();
-		audio.forEach(sound=>{sound.pause();});
 		pauseButton.innerHTML = '&#xf04b;';
+		activeAnimal.forEach(sound=>{sound.pause();});
+		activeSong[0].pause();
 	}
 	
  }
-
-
-// function pauseSong() {
-// 	// accounts for different icon size
-// 	pauseButton.style.width = '20.58px';
-// 	if (song.paused) {
-// 		song.play();
-// 		pauseButton.innerHTML = '&#xf04c;';
-// 	}
-
-// 	// else if (dropZones.forEach(zone => {
-// 	// 	zone.firstChild == null;
-// 	// 	console.log('hi')
-// 	// })) {
-// 	// 	song.pause();
-// 	// 	audio.pause();
-// 	// }
-
-// 	else {
-// 		song.pause();
-// 		pauseButton.innerHTML = '&#xf04b;';
-// 	}
-	
-// }
 
 function rewind() {
 	dropZones.forEach(zone => {
@@ -135,10 +120,12 @@ function rewind() {
 }
 
 function removeIcon() {
-	dropZones.forEach(zone => {
-		zone.innerHTML = null;
-		audio.forEach(sound=>{sound.pause();});
-	});
+		let unwanted = this.firstChild;
+		animalCon.appendChild(unwanted);
+		let unwantedID = unwanted.id;
+		let unwantedAud = document.querySelector(`audio[data-audioref="${unwantedID}"]`);
+		unwantedAud.pause();
+		activeAnimal.splice(unwantedAud);
 }
 
 function swapSong() {
@@ -147,6 +134,7 @@ function swapSong() {
 	song.src = `audio/${currentSong}`;
 	song.load();
 	audio.forEach(sound=>{sound.currentTime=0;});
+	activeSong.push(song);
 	song.play();
 }
 
@@ -199,5 +187,5 @@ btn2.addEventListener('click', swapBg2);
 btn3.addEventListener('click', swapBg3);
 btn4.addEventListener('click', swapBg4);
 
-
+console.log(dropped);
 })();
