@@ -13,8 +13,7 @@
 
 <body>
 <h1 class="hidden">Animal Tracks Game</h1>
-	<img src="images/drag.gif" alt="drag animated gif">
-		<section class="instructionsOverlay oneFade">
+		<section class="instructionsOverlay oneFade forceCpu">
 			<h2 class="hidden">Instructions</h2>
 			<div class="iTopCon">
 				<div class="iSongs"><p>Click to change the songs and backgrounds<p></div>
@@ -29,12 +28,13 @@
 				<div class="iStart"><p>Click anywhere to start<p></div>
 			</div>
 		</section>
+		<div id="dragGif"><img src="images/drag.gif" alt="drag animated gif"></div>
 	<div id="container">
 
 		<section id="gameArea">
 		<h2 class="hidden">Game Area</h2>
 			<div id="gameCon">
-				<nav id="music">
+				<nav id="music" class="forceCpu">
 				<h3 class="hidden">Music Navigation</h3>
 					<ul>
 						<li><div data-currentsong="song1.mp3" class="songBtn" id="btn1" tabindex="0"><img src="images/icon1.svg" alt="Day Scene"></div></li>
@@ -62,18 +62,18 @@
 
 						<div class="bgOverlay"></div>
 
-						<div class="titleOverlay">
+						<div class="titleOverlay forceCpu">
 							<h3 class="titleOverlayText pulsing">Animal Tracks</h3>
 						</div>
 
-						<div class="enviroOverlay">
+						<div class="enviroOverlay forceCpu">
 							<p class="overlayText">Drag and Drop Here!</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<nav id="animals">
+			<nav id="animals" class="forceCpu">
 			<h3 class="hidden">Animals Navigation</h3>
 				<img class="image" id="img1" src="images/tiger_v2.svg" alt="tiger" draggable>
 				<img class="image" id="img2" src="images/dog_v2.svg" alt="dog" draggable>

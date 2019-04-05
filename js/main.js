@@ -1,23 +1,24 @@
 (() => {
 
 // const index = [0, 1, 2, 3]
-let images = document.querySelectorAll('.image'),
-	dropZones = document.querySelectorAll('.dropZone'),
-	audio = document.querySelectorAll('.audio'),
-	pauseButton = document.querySelector('#pauseButton'),
-	rewindButton = document.querySelector('#rewindButton'),
-	enviroOverlay = document.querySelector('.enviroOverlay'),
-	enviro = document.querySelector('#enviro'),
-	song = document.querySelector('.songs'),
-	songButtons = document.querySelectorAll('.songBtn'),
+let images 				= document.querySelectorAll('.image'),
+	dropZones 			= document.querySelectorAll('.dropZone'),
+	audio 				= document.querySelectorAll('.audio'),
+	pauseButton 		= document.querySelector('#pauseButton'),
+	rewindButton 		= document.querySelector('#rewindButton'),
+	enviroOverlay		= document.querySelector('.enviroOverlay'),
+	enviro 				= document.querySelector('#enviro'),
+	song 				= document.querySelector('.songs'),
+	songButtons 		= document.querySelectorAll('.songBtn'),
 	instructionsOverlay = document.querySelector('.instructionsOverlay'),
-	instructionsBtn = document.querySelector('.instructions'),
-	title = document.querySelector('.titleOverlayText'),
-	titleOverlay = document.querySelector('.titleOverlay'),
-	activeAnimal = [],
-	dropped = [],
-	activeSong = [],
-	animalCon = document.querySelector('#animals');
+	instructionsBtn 	= document.querySelector('.instructions'),
+	title 				= document.querySelector('.titleOverlayText'),
+	titleOverlay 		= document.querySelector('.titleOverlay'),
+	activeAnimal 		= [],
+	dropped 			= [],
+	activeSong 			= [],
+	animalCon 			= document.querySelector('#animals'),
+	dragGif 			= document.querySelector('#dragGif');
 
 
 // to be fix the pasue/play bug
@@ -89,7 +90,6 @@ function pause() {
 		if (!activeSong[0] == '') {
 			activeSong[0].play();
 		}
-		
 	}
 
 	else {
@@ -103,7 +103,7 @@ function pause() {
  }
 
 function reset() {
-	enviro.style.background = 'none';
+	enviro.style.backgroundImage = 'none';
 	animalCon.appendChild(images[0]);
 	animalCon.appendChild(images[1]);
 	animalCon.appendChild(images[2]);
@@ -139,11 +139,15 @@ function swapSong() {
 }
 
 function instructionsToggle() {
+	instructionsOverlay.classList.toggle('fadeIn');
 	instructionsOverlay.classList.toggle('hidden');
+	dragGif.classList.toggle('hidden');
 }
 
 function instructionsRemove() {
 	instructionsOverlay.classList.add('hidden');
+	dragGif.classList.add('hidden');
+	instructionsOverlay.classList.remove('fadeIn');
 }
 
 function instructionsFade() {
@@ -184,8 +188,12 @@ songButtons.forEach(button => {
 songButtons.forEach(button => {
 	button.addEventListener('click', swapBG);
 })
-instructionsBtn.addEventListener('click', instructionsToggle);
+
+// controls for toggling instructions
 instructionsOverlay.addEventListener('click', instructionsRemove);
+instructionsBtn.addEventListener('click', instructionsToggle);
+
+//  controls for first fade
 instructionsOverlay.addEventListener('click', instructionsFade);
 instructionsBtn.addEventListener('click', instructionsFade);
 

@@ -5,8 +5,27 @@
 
       .a_head {
                 <!-- animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction]*/ -->
+        -webkit-animation: a-head 2s ease-in-out infinite;
         animation: a-head 2s ease-in-out infinite;
         transform-origin: 50% 50%;
+      }
+
+      @-webkit-keyframes a-head {
+        0% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+        30% {
+          transform: translate(0px, 3px) rotate(5deg);
+        }
+        50% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+        80% {
+          transform: translate(0px, 3px) rotate(-5deg);
+        }
+        100% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
       }
 
       @keyframes a-head {
@@ -28,8 +47,27 @@
       }
 
     .a_hands {
+      -webkit-animation: a-hands 1s ease-in-out infinite;
       animation: a-hands 1s ease-in-out infinite;
     }
+    
+    @-webkit-keyframes a-hands {
+        0% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+        30% {
+          transform: translate(0px, 1px) rotate(.5deg);
+        }
+        50% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+        80% {
+          transform: translate(0px, 1px) rotate(-.5deg);
+        }
+        100% {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+      }
 
     @keyframes a-hands {
         0% {
@@ -50,9 +88,28 @@
       }
 
     .a_eyebrows {
+        -webkit-animation: a-eyebrows 2s ease-in-out infinite;
         animation: a-eyebrows 2s ease-in-out infinite;
         transform-origin: 50% 50%;
     }
+    
+     @-webkit-keyframes a-eyebrows {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        30% {
+          transform: translate(0px, 3px);
+        }
+        50% {
+          transform: translate(0px, 0px);
+        }
+        80% {
+          transform: translate(0px, 3px);
+        }
+        100% {
+          transform: translate(0px, 0px);
+        }
+      }
 
      @keyframes a-eyebrows {
         0% {
@@ -73,8 +130,30 @@
       }
 
       .a_tongue {
+        -webkit-animation: a-tongue 5s ease-in-out infinite;
         animation: a-tongue 5s ease-in-out infinite;
         transform-origin: center;
+      }
+
+      @-webkit-keyframes a-tongue {
+        0% {
+          transform: rotate(0);
+        }
+        10% {
+          transform: rotate(7deg);
+        }
+        20% {
+          transform: rotate(0deg);
+        }
+        40% {
+          transform: rotate(7deg);
+        }
+        45% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(0);
+        }
       }
 
       @keyframes a-tongue {

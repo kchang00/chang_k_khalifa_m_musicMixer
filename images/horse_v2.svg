@@ -4,8 +4,18 @@
       .cls-2{fill:#17325f}.cls-10,.cls-6{fill:none;stroke-miterlimit:10}.cls-6{stroke:#1e1e26;stroke-width:.16px}.cls-8{fill:#564d60}.cls-9{fill:#dddde5}.cls-10{stroke:#fff;stroke-width:.9px}.cls-16{fill:#0c0c14}.cls-18{fill:#fff}
 
         .hr {
+          -webkit-animation: hr .8s ease infinite alternate;
           animation: hr .8s ease infinite alternate;
           transform-origin: left;
+        }
+        
+        @-webkit-keyframes hr {
+          0% {
+            transform: translate(0,0) rotate(0deg);
+          }
+          100% {
+            transform: translate(3px,10px) rotate(-3deg);
+          }
         }
 
         @keyframes hr {
@@ -18,8 +28,27 @@
         }
 
         .a_eyebrow_l {
+          -webkit-animation: a-eyebrow-l 6s ease infinite alternate;
           animation: a-eyebrow-l 6s ease infinite alternate;
           transform-origin: 50% 50%;
+        }
+
+        @-webkit-keyframes a-eyebrow-l {
+          0% {
+            transform: translate(0);
+          }
+          10% {
+            transform: translate(0px, 5px);
+          }
+          20% {
+            transform: translate(0px, 5px);
+          }
+          30% {
+            transform: translate(0);
+          }
+          100% {
+            transform: translate(0);
+          }
         }
 
         @keyframes a-eyebrow-l {
@@ -41,8 +70,27 @@
         }
 
         .a_eyebrow_r {
+          -webkit-animation: a-eyebrow-r 6s ease infinite alternate;
           animation: a-eyebrow-r 6s ease infinite alternate;
           transform-origin: 50% 50%;
+        }
+
+         @-webkit-keyframes a-eyebrow-r {
+          0% {
+            transform: translate(0);
+          }
+          10% {
+            transform: translate(0px, -5px);
+          }
+          20% {
+            transform: translate(0px, -5px);
+          }
+          30% {
+            transform: translate(0);
+          }
+          100% {
+            transform: translate(0);
+          }
         }
 
         @keyframes a-eyebrow-r {
@@ -63,10 +111,28 @@
           }
         }
 
-
         .a_lower_leg {
+          -webkit-animation: a-lower-leg 4s ease infinite;
           animation: a-lower-leg 4s ease infinite;
           transform-origin: left;
+        }
+
+        @-webkit-keyframes a-lower-leg {
+          0% {
+            transform: rotate(0deg);
+          }
+          10% {
+            transform: translate(-2px, -5px);
+          }
+          30% {
+            transform: translate(-9px, 61px) rotate(-18deg);
+          }
+          45% {
+             transform: translate(-4px, 35px) rotate(-9deg);
+          }
+          100% {
+
+          }
         }
 
         @keyframes a-lower-leg {
@@ -89,13 +155,38 @@
 
 
         .a_upper_leg {
+          -webkit-animation: a-hooves 4s ease infinite;
           animation: a-hooves 4s ease infinite;
           transform-origin: left;
         }
 
         .a_hooves {
-          animation: a-hooves 4s ease infinite;
+          -webkit-animation: a-hooves 4s ease infinite;
           transform-origin: left;
+        }
+        
+        @-webkit-keyframes a-hooves {
+          0% {
+            transform: rotate(0deg);
+          }
+          10% {
+            transform: translate(-10px, 70px) rotate(-20deg);
+          }
+          15% {
+            transform: translate(10px, 140px) rotate(-40deg);
+          }
+          30% {
+            transform: translate(-5px, 110px) rotate(-30deg);
+          }
+          35% {
+            transform: translate(-5px, 110px) rotate(-30deg);
+          }
+          45% {
+            transform: translate(-5px, 20px) rotate(-5deg);
+          }
+          100% {
+            transform: translate(0) rotate(0);
+          }
         }
 
         @keyframes a-hooves {
@@ -123,8 +214,24 @@
         }
 
         .a_leg_left {
+          -webkit-animation: a-leg-left 6s ease infinite;
           animation: a-leg-left 6s ease infinite;
           transform-origin: center;
+        }
+        
+        @-webkit-keyframes a-leg-left {
+        0% {
+          transform: rotate(0);
+        }
+        10% {
+          transform: rotate(-2deg);
+        }
+        90% {
+          transform: rotate(-2deg);
+        }
+        100% {
+          transform: rotate(0);
+        }
         }
 
         @keyframes a-leg-left {
@@ -143,8 +250,24 @@
         }
     
         .a_eye {
+          -webkit-animation: a-eye 3s infinite alternate;
           animation: a-eye 3s infinite alternate;
           transform-origin: 50% 50%;
+        }
+        
+        @-webkit-keyframes a-eye {
+          0% {
+            transform: translateY(0px) scaleY(1);
+          }
+          5% {
+            transform: translateY(-77px) scaleY(0.1);
+          }
+          10% {
+            transform: translateY(0px) scaleY(1);
+          }
+          100% {
+            transform: translateY(0px) scaleY(1);
+          }
         }
 
         @keyframes a-eye {
