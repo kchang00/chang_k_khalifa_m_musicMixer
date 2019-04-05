@@ -1,24 +1,24 @@
 (() => {
 
-// const index = [0, 1, 2, 3]
-let images 				= document.querySelectorAll('.image'),
-	dropZones 			= document.querySelectorAll('.dropZone'),
-	audio 				= document.querySelectorAll('.audio'),
-	pauseButton 		= document.querySelector('#pauseButton'),
-	rewindButton 		= document.querySelector('#rewindButton'),
-	enviroOverlay		= document.querySelector('.enviroOverlay'),
-	enviro 				= document.querySelector('#enviro'),
-	song 				= document.querySelector('.songs'),
-	songButtons 		= document.querySelectorAll('.songBtn'),
-	instructionsOverlay = document.querySelector('.instructionsOverlay'),
-	instructionsBtn 	= document.querySelector('.instructions'),
-	title 				= document.querySelector('.titleOverlayText'),
-	titleOverlay 		= document.querySelector('.titleOverlay'),
-	activeAnimal 		= [],
-	dropped 			= [],
-	activeSong 			= [],
-	animalCon 			= document.querySelector('#animals'),
+let images 				= document.querySelectorAll('.image');
+	dropZones 			= document.querySelectorAll('.dropZone');
+	audio 				= document.querySelectorAll('.audio');
+	pauseButton 		= document.querySelector('#pauseButton');
+	rewindButton 		= document.querySelector('#rewindButton');
+	enviroOverlay		= document.querySelector('.enviroOverlay');
+	enviro 				= document.querySelector('#enviro');
+	song 				= document.querySelector('.songs');
+	songButtons 		= document.querySelectorAll('.songBtn');
+	instructionsOverlay = document.querySelector('.instructionsOverlay');
+	instructionsBtn 	= document.querySelector('.instructions');
+	title 				= document.querySelector('.titleOverlayText');
+	titleOverlay 		= document.querySelector('.titleOverlay');
+	activeAnimal 		= [];
+	dropped 			= [];
+	activeSong 			= [];
+	animalCon 			= document.querySelector('#animals');
 	dragGif 			= document.querySelector('#dragGif');
+	unwantedAud 		= 0;
 
 
 // to be fix the pasue/play bug
@@ -80,6 +80,10 @@ function initDrag() {
 
 //functions
 
+// function isUnwanted(element) {
+// 	return element == unwantedAud;
+// }
+
 function pause() {
 	// accounts for different icon size
 	pauseButton.style.width = '20.58px';
@@ -124,7 +128,12 @@ function removeIcon() {
 		let unwantedID = unwanted.id;
 		let unwantedAud = document.querySelector(`audio[data-audioref="${unwantedID}"]`);
 		unwantedAud.pause();
-		activeAnimal.splice(unwantedAud);
+		console.log(unwantedAud);
+		let unwantedIndex = activeAnimal.findIndex(sound => sound === unwantedAud);
+		console.log(unwantedIndex);
+		console.log(activeAnimal);
+		let removed = activeAnimal.splice(unwantedIndex,1);
+		console.log(activeAnimal);
 	}
 }
 
