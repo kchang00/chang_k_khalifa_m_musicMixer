@@ -70,6 +70,7 @@ function initDrag() {
 						let track = document.querySelector(`audio[data-audioref="${img}"]`);
 						activeAnimal.push(track);
 						song.currentTime = 0;
+						activeAnimal.forEach(sound => {sound.currentTime = 0;});
 						track.play();
 					}
 
@@ -79,10 +80,6 @@ function initDrag() {
 	});
 
 //functions
-
-// function isUnwanted(element) {
-// 	return element == unwantedAud;
-// }
 
 function pause() {
 	// accounts for different icon size
@@ -128,12 +125,12 @@ function removeIcon() {
 		let unwantedID = unwanted.id;
 		let unwantedAud = document.querySelector(`audio[data-audioref="${unwantedID}"]`);
 		unwantedAud.pause();
-		console.log(unwantedAud);
+		// console.log(unwantedAud);
 		let unwantedIndex = activeAnimal.findIndex(sound => sound === unwantedAud);
-		console.log(unwantedIndex);
-		console.log(activeAnimal);
+		// console.log(unwantedIndex);
+		// console.log(activeAnimal);
 		let removed = activeAnimal.splice(unwantedIndex,1);
-		console.log(activeAnimal);
+		// console.log(activeAnimal);
 	}
 }
 
