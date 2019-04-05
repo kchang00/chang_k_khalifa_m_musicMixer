@@ -5,18 +5,36 @@
 
         .a_hand_l {
           <!-- animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction]*/ -->
+            -webkit-animation: a-hand-l 1s ease-out infinite reverse;
             animation: a-hand-l 1s ease-out infinite reverse;
             transform-origin: right;
         }
 
         .a_upperarm_l {
+            -webkit-animation: a-hand-l 1s ease-in-out -.06s infinite reverse;
             animation: a-hand-l 1s ease-in-out -.06s infinite reverse;
             transform-origin: right;
         }
 
         .a_lowerarm_l {
+            -webkit-animation: a-hand-l 1s ease-in-out -.01s infinite reverse;
             animation: a-hand-l 1s ease-in-out -.01s infinite reverse;
             transform-origin: right;
+        }
+
+        @-webkit-keyframes a-hand-l{
+        0% { 
+          transform: rotate(0deg) translate(0px, 0px);
+        }
+        25% {
+          transform: rotate(-1deg) translate(0px, -2px);
+        }
+        75%{
+          transform: rotate(3deg) translate(1px, -3px);
+        }
+        100% {
+          transform: rotate(0deg) translate(0px, 0px)
+        }
         }
 
         @keyframes a-hand-l{
@@ -35,14 +53,24 @@
         }
 
         .a_arm_r {
-          <!-- animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction]*/ -->
+            -webkit-animation: a-arm-r 1s ease infinite alternate;
             animation: a-arm-r 1s ease infinite alternate;
             transform-origin: 50% 50%;
         }
 
         .a_lower_arm_r {
+            -webkit-animation: a-arm-r 1s infinite -1s alternate;
             animation: a-arm-r 1s infinite -1s alternate;
             transform-origin: 50% 50%;
+        }
+
+        @-webkit-keyframes a-arm-r {
+        0% { 
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(4deg);
+        }
         }
 
         @keyframes a-arm-r {
@@ -55,8 +83,27 @@
         }
 
         .a_tail {
+          -webkit-animation: a-tail 4s infinite 3s;
           animation: a-tail 4s infinite 3s;
           transform-origin: left;
+        }
+
+        @-webkit-keyframes a-tail {
+          0% {
+            transform: rotate(0deg);
+          }
+          5% {
+            transform: rotate(-1deg);
+          }
+          10% {
+            transform: rotate(1deg);
+          }
+          20% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
         }
 
         @keyframes a-tail {
@@ -78,8 +125,30 @@
         }
 
         .a_whiskers {
+            -webkit-animation: a-whiskers 3s infinite;
             animation: a-whiskers 3s infinite;
             transform-origin: 50% 50%;
+        }
+        
+        @-webkit-keyframes a-whiskers {
+            0% {
+              transform: rotate(0);
+            }
+            12.5% { 
+              transform: rotate(-2deg);
+            }
+            25% {
+              transform: rotate(0);
+            }
+            32.5% {
+              transform: rotate(2deg);
+            }
+            50% {
+              transform: rotate(0);
+            }
+            100% { 
+              transform: rotate(0)
+            }
         }
 
         @keyframes a-whiskers {
@@ -104,8 +173,24 @@
         }
 
         .a_head {
+          -webkit-animation: a-head 1s ease infinite;
           animation: a-head 1s ease infinite;
           transform-origin: 50% 50%;
+        }
+        
+        @-webkit-keyframes a-head {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(2deg);
+          }
+          75% {
+            transform: rotate(-7deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
         }
 
         @keyframes a-head {
